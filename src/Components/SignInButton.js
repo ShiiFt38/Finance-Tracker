@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-function SignInButton({text, onClick, iconSrc, iconAlt}) {
+function SignInButton({text, onClick, iconSrc, iconAlt, link}) {
   return (
     <button
-      className="flex justify-center items-center px-16 py-2.5 mt-3.5 max-w-full font-bold tracking-wide whitespace-nowrap bg-blue-600 rounded-xl leading-[150%] text-white w-[511px] max-md:px-5 cursor-pointer"
+      className="flex justify-center align-middle items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap bg-blue-600 rounded-xl text-white w-[180px] h-[35px]  max-md:px-5 cursor-pointer"
       onClick={onClick}
     >
       {iconSrc && <img src={iconSrc} alt={iconAlt} className="self-start w-5 aspect-square mr-2" />}
-      {text}
+      <Link to={link}>{text}</Link>
     </button>
   );
 }

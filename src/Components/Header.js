@@ -1,16 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SignInButton from './SignInButton';
 
 function Header() {
   return (
-    <header className="flex flex-col w-full bg-white max-md:max-w-full">
-    <div className="flex gap-5 justify-between px-10 py-3.5 w-full font-bold whitespace-nowrap border-b border-solid border-b-gray-200 max-md:flex-wrap max-md:px-5 max-md:max-w-full">
-      <div className="flex gap-4 my-auto text-lg tracking-tight text-neutral-900">
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0e95cca3038a028279f12806f5c3ea70a9c76d1ff8ff5205b4d4eeef130a621?apiKey=b074e2c085af4116b9f692cd99369e40&" alt="FinTrackr Logo" className="my-auto w-4 aspect-square" />
-        <div>FinTrackr</div>
+    <header className="flex flex-wrap place-items-center justify-between mx-auto sm:w-[100%] md:w-[80%] min-h-[65px] top-0 left-0 border-b [border-bottom-style:solid] border-[#e5e8ea]">
+
+      <div className="flex w-[95.34px] h-[65px] place-items-center">
+        <div className="w-[16px] h-[16px] m-auto">
+            <img className="absolute w-[12px] h-[13px] top-px left-[2px]" alt="Vector" src="./images/Logo.png" />
+          </div>
+          <div className="md:items-start sm:place-items-center self-stretch w-full m-auto">
+            <Link to='/' className="relative w-fit mt-[-1.00px] font-bold text-variable-collection-secondary-2 align-middle text-[18px] tracking-[-0.27px] leading-[22.5px] ">
+              FinTrackr
+            </Link>
+          </div>
       </div>
-      <SignInButton text="Sign up"/>
-    </div>
+
+      <div className='align-middle h-[65px] flex'>
+        <Link to='Login' className=" w-[89px] font-bold text-[#197fe5] m-auto text-[14px] align-middle leading-[27.5px]">
+          Log in
+        </Link>
+        <SignInButton text="Sign Up" link="/Login"/>
+      </div>
+
   </header>
   );
 };

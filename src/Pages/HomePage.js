@@ -1,201 +1,89 @@
 import React from 'react';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
+import SignInButton from '../Components/SignInButton';
+
 
 function HomePage() {
   return (
-    <div className="bg-white flex flex-row justify-center w-full">
-    <div className="bg-white w-[1280px] h-[3012px] relative">
-      <div className="absolute w-[1122px] h-[1200px] top-[1419px] left-[68px]">
-        <div className="absolute w-[355px] h-[487px] top-[124px] left-[25px] bg-[#111416] rounded-[20px] blur-[100px]" />
-        <div className="absolute w-[355px] h-[487px] top-[124px] left-[767px] bg-[#111416] rounded-[20px] blur-[100px]" />
-        <div className="flex w-[177px] h-[40px] items-center justify-center px-[16px] py-0 absolute top-[553px] left-[928px] bg-variable-collection-primary-1 rounded-[12px] overflow-hidden">
-          <div className="relative w-fit [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[14px] tracking-[0.21px] leading-[21px] whitespace-nowrap">
-            Tips &amp; Tricks
+    <>
+    <Header />
+    <main className="flex flex-col space-y-10 bg-white w-[100%] justify-center w-full">
+
+      {/* Introduction section */}
+      <section className='grid grid-cols-12 w-[100%] min-h-[400px] '>
+
+        {/* First column of intro section */}
+        <div className='grid grid-rows-6 bg-white place-items-center align-middle sm:col-start-2 sm:col-span-10 lg:col-start-3 lg:col-span-3 h-[100%]'>
+          <div className='row-start-1 row-span-4'>
+            <p className='mx-30px align-middle'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur.</p>
+          </div>
+          <div className=''>
+            <SignInButton text='Get started' link='/Login'/>
           </div>
         </div>
-        <div className="absolute w-[355px] h-[487px] top-[124px] left-[396px] bg-[#111416] rounded-[20px] blur-[100px]" />
-        <div className="flex w-[177px] h-[40px] items-center justify-center px-[16px] py-0 absolute top-[548px] left-[561px] bg-variable-collection-primary-1 rounded-[12px] overflow-hidden">
-          <div className="relative w-fit [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[14px] tracking-[0.21px] leading-[21px] whitespace-nowrap">
-            Tips &amp; Tricks
-          </div>
+
+        {/* Second column of intro section */}
+        <div className=' sm:col-start-1 sm:col-span-12 lg:col-start-7 lg:col-span-5'>
+          <img src='./images/undraw_Insert_re_s97w.png' alt='carousel'className=' w-[327px] h-[287px] top-[139px] left-[411px] object-cover m-auto end-0'></img>
         </div>
-        <div className="flex w-[177px] h-[40px] items-center justify-center px-[16px] py-0 absolute top-[548px] left-[191px] bg-variable-collection-primary-1 rounded-[12px] overflow-hidden">
-          <div className="relative w-fit [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[14px] tracking-[0.21px] leading-[21px] whitespace-nowrap">
-            Tips &amp; Tricks
-          </div>
+      </section>
+
+      {/* About Us section */}
+      <section className='grid grid-cols-12 w-[100%] min-h-[400px] my-3'>
+
+        {/* First column of about us section */}
+        <div className='grid grid-rows-6 sm:col-start-2 lg:col-start-2 sm:col-span-10 lg:col-span-5'>
+          <h1 className='font-bold text-[28px] mx-auto row-start-1 '>About Us</h1>
+          <p className='text-center row-start-2 row-span-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur.</p>
         </div>
-        <img
-          className="absolute w-[327px] h-[287px] top-[139px] left-[411px] object-cover"
-          alt="Rectangle"
-          src=" "
-        />
-        <img
-          className="absolute w-[327px] h-[287px] top-[139px] left-[781px] object-cover"
-          alt="Rectangle"
-          src=" "
-        />
-        <img
-          className="absolute w-[327px] h-[287px] top-[139px] left-[41px] object-cover"
-          alt="Rectangle"
-          src=" "
-        />
-        <div className="w-[1070px] h-[1200px] left-[39px] absolute top-0">
-          <img
-            className="absolute w-[522px] h-[370px] top-[830px] left-[542px] object-cover"
-            alt="Rectangle"
-            src=" "
-          />
-          <div className="absolute w-[414px] h-[57px] top-[718px] left-[54px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[48px] text-center tracking-[-0.27px] leading-[22.5px]">
-            Why Us
-          </div>
-          <div className="absolute w-[414px] h-[57px] top-0 left-[54px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[48px] text-center tracking-[-0.27px] leading-[22.5px]">
-            Features
-          </div>
-          <p className="absolute w-[520px] h-[232px] top-[907px] left-[2px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[24px] text-center tracking-[-0.27px] leading-[22.5px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur.
-          </p>
+
+        {/* Second column of the about us section */}
+        <div className='sm:col-start-1 lg:col-start-7 sm:col-span-12 lg:col-span-5'>
+          <img src='./images/Logo.png' alt='Logo'className=' w-[327px] h-[287px] top-[139px] left-[411px] object-cover m-auto end-0'></img>
         </div>
-        <div className="absolute w-[355px] h-[82px] top-[450px] left-0 [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[20px] text-center tracking-[-0.27px] leading-[41px]">
-          Real-time interactive reports
-        </div>
-        <p className="absolute w-[277px] h-[93px] top-[450px] left-[430px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[20px] tracking-[-0.27px] leading-[41px]">
-          Simple income and expense tracking
-        </p>
-        <p className="absolute w-[305px] h-[71px] top-[481px] left-[792px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[20px] tracking-[-0.27px] leading-[41px]">
-          Interactive dashboard for overview insights
-        </p>
-        <div className="flex w-[177px] h-[40px] items-center justify-center px-[16px] py-0 absolute top-[548px] left-[191px] bg-variable-collection-primary-1 rounded-[12px] overflow-hidden">
-          <div className="relative w-fit [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[14px] tracking-[0.21px] leading-[21px] whitespace-nowrap">
-            Tips &amp; Tricks
-          </div>
-        </div>
-      </div>
-      <div className="absolute w-[1280px] h-[65px] top-0 left-0 border-b [border-bottom-style:solid] border-[#e5e8ea]">
-        <div className="relative w-[1093px] h-[40px] top-[12px] left-[147px]">
-          <div className="flex w-[85px] h-[40px] items-start gap-[8px] absolute top-0 left-[939px]">
-            <div className="flex w-[84.89px] h-[40px] items-center justify-center px-[16px] py-0 relative bg-variable-collection-primary-1 rounded-[12px] overflow-hidden">
-              <div className="flex flex-col w-[52.89px] h-[21px] items-start relative bg-variable-collection-primary-1">
-                <div className="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                  <div className="relative w-fit mt-[-1.00px] mr-[-0.11px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[14px] tracking-[0.21px] leading-[21px] whitespace-nowrap">
-                    Sign up
-                  </div>
-                </div>
-              </div>
+      </section>
+
+      {/* Features section */}
+      <section className='flex flex-wrap space-x-5 space-y-10 justify-center w-[100%] min-h-[500px] my-100px'>
+        <div className='mx-30px w-[355px] rounded-[20px] border [border-style:solid] border-[#e5e8ea] overflow-hidden space-between text-center'>
+            <img src='./images/Reports Page.png' alt='Reports Page'className='w-[327px] h-[287px] object-cover'></img>
+            <p className='font-bold m-10'>Real-Time Interactive and Customisable Reports.</p>
+            <div className='flex place-content-center'>
+              <SignInButton text='Tips & Tricks' link='/Reports-Tips'/>
             </div>
-          </div>
-          <div className="flex w-[107px] h-[22px] items-center gap-[16px] absolute top-[10px] left-[-37px]">
-            <div className="flex flex-col w-[16px] h-[16px] items-start relative">
-              <div className="relative w-[16px] h-[16px]">
-                <img className="absolute w-[12px] h-[13px] top-px left-[2px]" alt="Vector" src="vector-0.svg" />
-              </div>
+        </div>
+        <div className='mx-30px w-[355px] min-h-[500px] rounded-[20px]  border [border-style:solid] border-[#e5e8ea] overflow-hidden'>
+        <img src='./images/Transaction Page.png' alt='Transaction Page' className='w-[327px] h-[287px] object-cover'></img>
+            <p className='font-bold m-10'>Simple Income and Expense Tracking.</p>
+            <div className='flex place-content-center'>
+              <SignInButton text='Tips & Tricks' link='/Tracking-Tips
+              '/>
             </div>
-            <div className="flex flex-col w-[75.34px] h-[22.5px] items-start relative">
-              <div className="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto] mb-[-0.50px]">
-                <div className="relative w-fit mt-[-1.00px] mr-[-5.66px] [font-family:'Inter-Bold',Helvetica] font-bold text-variable-collection-secondary-2 text-[18px] tracking-[-0.27px] leading-[22.5px] whitespace-nowrap">
-                  FinTrackr
-                </div>
-              </div>
+        </div>
+        <div className='mx-30px w-[355px] min-h-[500px] rounded-[20px]  border [border-style:solid] border-[#e5e8ea] overflow-hidden'>
+          {/* <div className="w-[355px] h-[487px] top-[124px] left-[25px] bg-[#111416] rounded-[20px] blur-[100px]"></div> */}
+          <div className='w-[327px] h-[287px] object-cover'>
+            <img src='./images/Home Page.png' alt='Home Page' className='w-[327px] h-[287px] object-cover'></img>
+          </div>
+            <p className='font-bold m-10'>Interactive Dashboard for Overview Insights</p>
+            <div className='flex place-content-center'>
+              <SignInButton text='Tips & Tricks' link='Dashboards-Tips'/>
             </div>
-          </div>
-          <div className="absolute w-[89px] h-[40px] top-[-2px] left-[827px] [font-family:'Inter-Bold',Helvetica] font-bold text-[#197fe5] text-[14px] text-center tracking-[-0.33px] leading-[27.5px]">
-            Log in
-          </div>
         </div>
-      </div>
-      <div className="absolute w-[314px] h-[71px] top-[622px] left-[164px]">
-        <div className="w-[315px] h-[71px] bg-variable-collection-primary-1 rounded-[12px]">
-          <div className="flex flex-col w-[138px] h-[29px] items-start relative top-[21px] left-[88px]">
-            <div className="relative w-fit mt-[-1.00px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[24px] tracking-[0.21px] leading-[21px] whitespace-nowrap">
-              Get Started
-            </div>
-          </div>
-        </div>
-      </div>
-      <p className="w-[340px] top-[313px] left-[158px] absolute h-[232px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[24px] text-center tracking-[-0.27px] leading-[22.5px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        conseq
-      </p>
-      <div className="absolute w-[629px] h-[519px] top-[225px] left-[542px] bg-cover bg-[50%_50%]">
-        <div className="top-[299px] bg-[#637587] absolute w-[11px] h-[11px] left-[581px] rounded-[5.5px]" />
-        <img
-          className="top-[337px] absolute w-[40px] h-[24px] left-[567px]"
-          alt="Angle right solid"
-          src="angle-right-solid-1.svg"
-        />
-        <img
-          className="top-[397px] absolute w-[40px] h-[24px] left-[567px]"
-          alt="Angle right solid"
-          src="angle-right-solid-2.svg"
-        />
-        <div className="top-[259px] bg-[#637587] absolute w-[11px] h-[11px] left-[581px] rounded-[5.5px]" />
-        <div className="top-[279px] bg-[#197fe5] absolute w-[11px] h-[11px] left-[581px] rounded-[5.5px]" />
-      </div>
-      <div className="absolute w-[1068px] h-[482px] top-[880px] left-[118px]">
-        <div className="absolute w-[1068px] h-[482px] top-0 left-0">
-          <div className="w-[414px] h-[57px] left-[54px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[48px] text-center tracking-[-0.27px] leading-[22.5px] absolute top-0">
-            About Us
-          </div>
-          <p className="w-[520px] top-[161px] left-[2px] absolute h-[232px] [font-family:'Inter-Bold',Helvetica] font-bold text-black text-[24px] text-center tracking-[-0.27px] leading-[22.5px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur.
-          </p>
-          <div className="absolute w-[114px] h-[157px] top-[191px] left-[717px] bg-[#111416]" />
-        </div>
-        <div className="absolute w-[117px] h-[157px] top-[112px] left-[831px] bg-[#111416]" />
-      </div>
-      <footer className="absolute w-[1280px] h-[299px] top-[2713px] left-0 bg-[#637587]">
-        <div className="absolute w-[964px] h-[41px] top-[46px] left-[108px]">
-          <div className="absolute w-[89px] top-px left-[869px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[24px] tracking-[-0.27px] leading-[22.5px]">
-            Legal
-          </div>
-          <div className="absolute w-[197px] top-[2px] left-[473px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[24px] tracking-[-0.27px] leading-[22.5px]">
-            Product
-          </div>
-          <div className="absolute w-[197px] top-0 left-0 [font-family:'Inter-Bold',Helvetica] font-bold text-white text-[24px] tracking-[-0.27px] leading-[22.5px]">
-            Features
-          </div>
-        </div>
-        <div className="absolute w-[1042px] h-[154px] top-[105px] left-[107px]">
-          <div className="left-0 flex flex-col items-start gap-[28px] absolute w-[286px] h-[154px] top-0">
-            <p className="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-variable-collection-secondary-2 text-[16px] tracking-[-0.27px] leading-[22.5px]">
-              <span className="tracking-[-0.04px]">
-                Reports
-                <br />
-              </span>
-            </p>
-            <p className="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-variable-collection-secondary-2 text-[16px] tracking-[-0.27px] leading-[22.5px]">
-              <span className="tracking-[-0.04px]">
-                Finance Tracking
-                <br />
-              </span>
-            </p>
-            <p className="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-variable-collection-secondary-2 text-[16px] tracking-[-0.27px] leading-[22.5px]">
-              <span className="tracking-[-0.04px]">Dashboard</span>
-            </p>
-          </div>
-          <div className="left-[475px] flex flex-col items-start gap-[28px] absolute w-[286px] h-[154px] top-0">
-            <p className="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-variable-collection-secondary-2 text-[16px] tracking-[-0.27px] leading-[22.5px]">
-              <span className="tracking-[-0.04px]">
-                About Us
-                <br />
-              </span>
-            </p>
-            <p className="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-variable-collection-secondary-2 text-[16px] tracking-[-0.27px] leading-[22.5px]">
-              <span className="tracking-[-0.04px]">Why Us</span>
-            </p>
-          </div>
-          <div className="absolute w-[166px] top-0 left-[870px] [font-family:'Inter-Bold',Helvetica] font-bold text-variable-collection-secondary-2 text-[16px] tracking-[-0.27px] leading-[22.5px]">
-            Terms &amp; Services
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
+      </section>
+
+      {/* Why Us section */}
+      <section className='flex flex-wrap w-[100%] h-[400px] my-100px'></section>
+  </main>
+  <Footer />
+  </>
   )
 }
 
