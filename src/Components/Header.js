@@ -8,7 +8,7 @@ function Header() {
 
       <div className="flex w-[95.34px] h-[65px] place-items-center">
         <div className="w-[16px] h-[16px] m-auto">
-            <img className="absolute w-[12px] h-[13px] top-px left-[2px]" alt="Vector" src="./images/Logo.png" />
+            <img className="w-[12px] h-[13px] m-auto " alt="Vector" src="./images/Logo.png" />
           </div>
           <div className="md:items-start sm:place-items-center self-stretch w-full m-auto">
             <Link to='/' className="relative w-fit mt-[-1.00px] font-bold text-variable-collection-secondary-2 align-middle text-[18px] tracking-[-0.27px] leading-[22.5px] ">
