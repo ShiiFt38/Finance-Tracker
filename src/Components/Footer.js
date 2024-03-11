@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-<footer className=" flex w-[100%] h-[299px] end-0 bg-[#637587]">
+<footer className=" flex sm:flex-col md:flex-row sm:text-center w-[100%] min-h-[150px] end-0 bg-[#637587]">
+  
     <div className='w-[300px] h-[80%] m-auto'>
       <div className='row-start-1 row-span-1'>
         <h1 className='font-bold text-white text-[24px]'>Features</h1>
@@ -16,6 +17,7 @@ function Footer() {
         </ul>
       </div>
     </div>
+
     <div className='w-[300px] h-[80%] m-auto'>
       <div className='row-start-1 row-span-1'>
         <h1 className='font-bold text-white text-[24px]'>Product</h1>
@@ -27,6 +29,7 @@ function Footer() {
         </ul>
       </div>
     </div>
+
     <div className='w-[300px] h-[80%] m-auto'>
       <div className='row-start-1 row-span-1'>
         <h1 className='font-bold text-white text-[24px]'>Legal</h1>

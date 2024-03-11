@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SignInButton from './SignInButton';
+import SignInButton from './Button';
 
 function Header() {
   return (

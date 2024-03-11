@@ -1,5 +1,5 @@
 import React from 'react';
-import SignInButton from '../Components/SignInButton'
+import Button from '../Components/Button'
 import Header from '../Components/Header';
 
 function LoginPage() {
@@ -19,11 +19,11 @@ function LoginPage() {
           <input id="passwordInput" type="password" className="sr-only" />
         </label>
       </section>
-      <SignInButton text="Sign in" />
+      <Button text="Sign in" />
       <div className="mt-3 text-center leading-[150%]">OR</div>
-      <SignInButton
+      <Button
         text="Sign in with Google"
-        iconsrc="https://cdn.builder.io/api/v1/image/assets/TEMP/57721d347e18149d73d7ee39a49766d71956af81180f2e23eb5e486d7173600e?apiKey=b074e2c085af4116b9f692cd99369e40&"iconAlt="Google sign-in"
+        iconsrc="https://icons8.com/icon/17949/google" iconAlt="Google sign-in"
       />
       <div className="mt-16 mb-8 text-center whitespace-nowrap leading-[150%] max-md:mt-10">Forgot your email or password?</div>
     </main>

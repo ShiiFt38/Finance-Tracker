@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import SignInButton from '../Components/SignInButton';
+import Button from '../Components/Button';
 
 
 function HomePage() {
   return (
     <>
     <Header />
-    <main className="flex flex-col space-y-10 bg-white w-[100%] justify-center w-full">
+    <main className="flex flex-col space-y-10  font-bold bg-white w-[100%] justify-center w-full">
 
       {/* Introduction section */}
       <section className='grid grid-cols-12 w-[100%] mt-8 min-h-[400px] '>
@@ -22,7 +22,7 @@ function HomePage() {
               fugiat nulla pariatur.</p>
           </div>
           <div className=''>
-            <SignInButton text='Get started' link='/Login'/>
+            <Button text='Get started' link='/Login'/>
           </div>
         </div>
 
@@ -62,7 +62,7 @@ function HomePage() {
               <img src='./images/Reports Page.png' alt='Reports Page'className='w-[310px] h-[220px] object-cover'></img>
               <p className='font-bold m-10'>Real-Time Interactive and Customisable Reports.</p>
               <div className='flex place-content-center'>
-                <SignInButton text='Tips & Tricks' link='/Reports-Tips'/>
+                <Button text='Tips & Tricks' link='/Reports-Tips'/>
               </div>
           </div>
 
@@ -71,7 +71,7 @@ function HomePage() {
               <img src='./images/Transaction Page.png' alt='Reports Page'className='w-[310px] h-[220px] object-cover'></img>
               <p className='font-bold m-10'>Simple Income and Expense Tracking</p>
               <div className='flex place-content-center'>
-                <SignInButton text='Tips & Tricks' link='/Tracking-Tips'/>
+                <Button text='Tips & Tricks' link='/Tracking-Tips'/>
               </div>
           </div>
 
@@ -81,7 +81,7 @@ function HomePage() {
               <img src='./images/Home Page.png' alt='Reports Page'className='w-[310px] h-[220px] object-cover'></img>
               <p className='font-bold m-10'>Interactive Dashboard for Overview Insights</p>
               <div className='flex place-content-center'>
-                <SignInButton text='Tips & Tricks' link='/Dashboards-Tips'/>
+                <Button text='Tips & Tricks' link='/Dashboards-Tips'/>
               </div>
           </div>
         </div>
