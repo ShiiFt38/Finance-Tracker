@@ -16,10 +16,7 @@ function HomePage() {
         {/* First column of intro section */}
         <div className='grid grid-rows-6 bg-white place-items-center align-middle sm:col-start-2 sm:col-span-10 md:col-start-3 md:col-span-4 h-[100%]'>
           <div className='row-start-1 row-span-4'>
-            <p className='mx-30px align-middle'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur.</p>
+            <p className='mx-30px align-middle text-center'>FinTracker is your all-in-one expense and income tracking web app designed to streamline your financial management. With FinTracker, you can effortlessly track your transactions, gain insights into your spending habits, and take control of your finances like never before. Our user-friendly interface allows you to input and categorize your transactions with ease, ensuring that you have a clear overview of your financial activities.</p>
           </div>
           <div className=''>
             <Button text='Get started' link='/Login'/>
@@ -38,10 +35,8 @@ function HomePage() {
         {/* First column of about us section */}
         <div className='grid grid-rows-6 sm:col-start-2 md:col-start-3 sm:col-span-10 md:col-span-4'>
           <h1 className='font-bold text-[28px] mx-auto row-start-1 '>About Us</h1>
-          <p className='text-center row-start-2 row-span-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur.</p>
+          <p className='text-center row-start-2 row-span-5'>At FinTracker, we're passionate about helping individuals take control of their finances. Our mission is to provide a user-friendly and comprehensive platform that empowers users to track their expenses, analyze their financial history, and make informed decisions about their money. With a focus on simplicity and efficiency, we strive to make financial management accessible to everyone, helping our users save money and budget better.
+          </p>
         </div>
 
         {/* Second column of the about us section */}
@@ -95,10 +90,8 @@ function HomePage() {
         {/* First colulmn of why us section */}
       <div className='grid grid-rows-6 sm:col-start-2 md:col-start-3 sm:col-span-10 md:col-span-4' id='Why-Us'>
           <h1 className='font-bold text-[28px] mx-auto row-start-1 '>Why Us</h1>
-          <p className='text-center row-start-2 row-span-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur.</p>
+          <p className='text-center row-start-2 row-span-5'>
+            Our platform stands out for its intuitive user interface, making it effortless for anyone to get started with tracking expenses and income. With FinTracker, you don't need to be a financial expert to take control of your money. Our simple UI guides you through the process, allowing you to input and categorize transactions with ease. Say goodbye to complex spreadsheets and tedious manual tracking. Join FinTracker today and simplify your financial management journey.</p>
         </div>
 
         {/* Second column of the Why us section */}
