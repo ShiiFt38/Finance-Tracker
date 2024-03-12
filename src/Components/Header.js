@@ -7,7 +7,7 @@ function Header() {
     <header className="relative flex flex-wrap sm:flex-col md:flex-row place-items-center justify-between mx-auto sm:w-[100%] md:w-[80%] min-h-[65px] top-0 left-0 border-b [border-bottom-style:solid] border-[#e5e8ea]">
 
       <div className="flex w-[95.34px] h-[65px] place-items-center">
-        <div className="w-[16px] h-[16px] m-auto">
+        <div className="w-[20px] h-[16px] m-auto">
           <img className="w-[12px] h-[13px] m-auto " alt="Vector" src="./images/Logo.png" />
         </div>
         <div className="md:items-start sm:place-items-center self-stretch w-full m-auto">

@@ -24,8 +24,9 @@ function Footer() {
       </div>
       <div className='row-start-2 row-span-6'>
         <ul className='font-bold'>
-          <li><a href='#About-Us'>About Us</a></li>
-          <li><a href='#Why-Us'>Why Us</a></li>
+          
+          <li><Link to='/'><a href='#About-Us'>About Us</a></Link></li>
+          <li><Link><a href='#Why-Us'>Why Us</a></Link></li>
         </ul>
       </div>
     </div>

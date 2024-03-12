@@ -3,7 +3,7 @@ import React from 'react'
 function TipsTemplate(props) {
   return (
     <>
-    <h1 className='font-bold text-[#637587] md:text-[64px] sm:text-[32px] text-center'>{props.title}</h1>
+    <h1 className='font-bold text-[#637587] md:text-[64px] mt-[20px] sm:text-[32px] text-center'>{props.title}</h1>
     <p className='text-center font-bold md:text-[24px] sm:text-[12px]'>Tips & Tricks</p>
 
     {/* First section of the page */}
