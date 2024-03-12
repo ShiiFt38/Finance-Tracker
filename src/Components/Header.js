@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import SignInButton from './Button';
 
 
-function Header() {
+function Header({hidden}) {
   return (
     <header className="relative flex flex-wrap sm:flex-col md:flex-row place-items-center justify-between mx-auto sm:w-[100%] md:w-[80%] min-h-[65px] top-0 left-0 border-b [border-bottom-style:solid] border-[#e5e8ea]">
 
@@ -17,7 +17,7 @@ function Header() {
         </div>
       </div>
 
-      <div className='align-middle h-[65px] flex sm:flex-col text-center sm:pb-20 md:pb-0 sm:pt-30 md:flex-row'>
+      <div className={`${hidden} align-middle h-[65px] flex sm:flex-col text-center sm:pb-20 md:pb-0 sm:pt-30 md:flex-row`}>
         <Link to='/Login' className=" w-[89px] font-bold text-[#197fe5] m-auto text-[14px] align-middle">
           Log in
         </Link>

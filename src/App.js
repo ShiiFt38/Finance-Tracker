@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import TipsTricks1 from './Pages/TipsTricks1';
 import TipsTricks2 from './Pages/TipsTricks2';
 import TipsTricks3 from './Pages/TipsTricks3';
+import Budgets from './Pages/Budgets';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/Tracking-Tips' element={<TipsTricks1/>}></Route>
       <Route path='/Dashboards-Tips' element={<TipsTricks2/>}></Route>
       <Route path='/Reports-Tips' element={<TipsTricks3/>}></Route>
+      <Route path='/Budgets' element={<Budgets/>}></Route>
     </Routes>
   )
 }
