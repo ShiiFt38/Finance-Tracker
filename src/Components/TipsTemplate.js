@@ -1,10 +1,12 @@
 import React from 'react'
+import Orb from './Orb'
 
 function TipsTemplate(props) {
   return (
     <>
     <h1 className='font-bold text-[#637587] md:text-[64px] mt-[20px] sm:text-[32px] text-center'>{props.title}</h1>
     <p className='text-center font-bold md:text-[24px] sm:text-[12px]'>Tips & Tricks</p>
+    <Orb/>
 
     {/* First section of the page */}
     <section className='grid grid-cols-12 mt-20 min-h-[200px]'>
