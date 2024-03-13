@@ -10,7 +10,7 @@ const Budgets = () => {
     />
         <Dashside/>
 
-    <div class="p-4 sm:ml-64">
+    <div class="p-4 sm:ml-[80px]">
         <h1 className='text-[22px] font-bold'>Budgets</h1>
     </div>
     </>

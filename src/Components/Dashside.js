@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Homeicon from '../assets/Home.png';
 import Transactionicon from '../assets/transaction.png'
 import Budgetsicon from '../assets/budget.png';
@@ -6,46 +6,51 @@ import Goalsicon from '../assets/Goals.png';
 import Reportsicon from '../assets/Reports.png'
 import Settingsicon from  "../assets/Settings.png";
 import Helpicon from '../assets/Help.png';
-import Button from './Button';
+import Logout from '../assets/right-from-bracket-solid.svg'
 
 const Dashside = () => {
+    const [open, setOpen] = useState(false)
+
+    const Menus = [
+        {name: "Dashboard", icon: Homeicon, alt: "home"},
+        {name: "Transactions", icon:Transactionicon, alt: "transaction"},
+        {name: "Budgets", icon: Budgetsicon, alt: "Budget" },
+        {name: "Goals", icon: Goalsicon, alt: "Goals"},
+        {name: "Reports", icon: Reportsicon, alt: "Reports"}
+    ];
+
   return (
-    <aside className='h-screen'>
+    <aside className={`absolute z-40 bg-white h-screen transition-all overflow-hidden duration-1000ms ease-in ${open ? 'w-[220px]' : 'w-[75px]'}`}>
         <nav className='h-full flex flex-col space-y-3 pt-5 px-5 border-r shadow-sm'>
             <div>
-                <div className='flex px-2 w-[180px] space-x-3 hover:bg-gray-300 p-2 rounded-xl'>
-                    <img src={Homeicon} alt='home' />
-                    <p>Dashboard</p>
-                </div>
-                <div className='flex px-2 w-[180px] space-x-3 hover:bg-gray-300 p-2 rounded-xl'>
-                    <img src={Transactionicon} alt='transaction' />
-                    <p>Transaction</p>
-                </div>
-                <div className='flex px-2 w-[180px] space-x-3 hover:bg-gray-300 p-2 rounded-xl'>
-                    <img src={Budgetsicon} alt='Budget' />
-                    <p>Budgets</p>
-                </div>
-                <div className='flex px-2 w-[180px] space-x-3 hover:bg-gray-300 p-2 rounded-xl'>
-                    <img src={Goalsicon} alt='Goals' />
-                    <p>Goals</p>
-                </div>
-                <div className='flex px-2 w-[180px] space-x-3 hover:bg-gray-300 p-2 rounded-xl'>
-                    <img src={Reportsicon} alt='Reports' />
-                    <p>Reports</p>
-                </div>
+
+                {open ? <img src="./images/angle-left-solid.svg" className='w-[17px] h-[30px]' alt="open menu" onClick={() => {setOpen(!open)}}></img> : <img src="./images/angle-right-solid.svg" className='w-[17px] h-[30px] mx-auto' alt="close menu" onClick={() => {setOpen(!open)}}></img>}
+
+                {Menus.map(menu => {
+                    return (
+                        <div key={menu.name} className={`flex px-2 w-[180px] space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
+                            <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={menu.icon} alt={menu.alt} />
+                            <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'}`}>{menu.name}</p>
+                        </div>
+                            )
+                         })}
 
                 <div>
-                    <Button
-                        text="Log Out"
-                        width="w-[120px]"
-                    />
-                    <div className='flex px-2 w-[180px] space-x-3 hover:bg-gray-300 p-2 rounded-xl'>
-                        <img src={Settingsicon} alt='settings' />
-                        <p>Settings</p>
+                <button
+                  className={`flex justify-center align-middle items-center mt-3.5 font-bold bg-blue-600 gap-2 rounded-xl text-white ${open ? 'w-[150px] px-6' : 'w-[40px]'} h-[30px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}
+
+                >
+                  <img src={Logout} alt="Logout" className="self-start w-5 aspect-square m-auto" />
+                  <span className={`${!open ? 'translate-x-[-208px] hidden' : 'translate-x-0'} w-full `}>Log Out</span>
+                </button>
+
+                    <div className={`flex px-2 w-[180px] space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
+                        <img className={`${open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Settingsicon} alt='settings' />
+                        <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'}`}>Settings</p>
                     </div>
-                    <div className='flex px-2 w-[180px] space-x-3 hover:bg-gray-300 p-2 rounded-xl'>
-                        <img src={Helpicon} alt='help' />
-                        <p>Help</p>
+                    <div className={`flex px-2 w-[180px] space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
+                        <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Helpicon} alt='help' />
+                        <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'}`}>Help</p>
                     </div>
                 </div>
             </div>
