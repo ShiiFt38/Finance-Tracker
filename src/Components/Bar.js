@@ -16,8 +16,8 @@ const Bar = ({ percent }) => {
 
 
   return (
-    <div className="flex my-auto w-full h-fit align-middle place-content-center text-right">
-        <div className='h-[10px] w-[150px] rounded-xl bg-gray-300 justify-items-start my-auto'>
+    <div className="flex my-auto w-full h-fit gap-3 align-middle place-content-center text-right">
+        <div className='h-[10px] w-[120px] rounded-xl bg-gray-300 justify-items-start my-auto'>
         <div className={`rounded-xl h-full bg-${color}-500`} style={{ width: `${percent}%` }}></div>
         </div>
       <p className='text-right'>{percent}</p>

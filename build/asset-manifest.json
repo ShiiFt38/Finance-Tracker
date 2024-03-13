@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.912e6fdb.css",
-    "main.js": "/static/js/main.5e9b0f49.js",
+    "main.css": "/static/css/main.a6de9468.css",
+    "main.js": "/static/js/main.f6a83bb6.js",
+    "static/media/right-from-bracket-solid.svg": "/static/media/right-from-bracket-solid.a701484a1e023ae7960e15d01b8aef6d.svg",
     "index.html": "/index.html",
-    "main.912e6fdb.css.map": "/static/css/main.912e6fdb.css.map",
-    "main.5e9b0f49.js.map": "/static/js/main.5e9b0f49.js.map"
+    "main.a6de9468.css.map": "/static/css/main.a6de9468.css.map",
+    "main.f6a83bb6.js.map": "/static/js/main.f6a83bb6.js.map"
   },
   "entrypoints": [
-    "static/css/main.912e6fdb.css",
-    "static/js/main.5e9b0f49.js"
+    "static/css/main.a6de9468.css",
+    "static/js/main.f6a83bb6.js"
   ]
 }
