@@ -21,11 +21,11 @@ const Dashside = () => {
     ];
 
   return (
-    <aside className={`absolute z-40 bg-white h-screen fixed transition-all overflow-hidden duration-1000ms ease-in ${open ? 'w-[220px]' : 'w-[75px]'}`}>
+    <aside className={`absolute z-40 bg-white h-screen fixed transition-all rounded-[10px] overflow-hidden duration-1000ms ease-in ${open ? 'w-[220px]' : 'w-[75px]'}`}>
         <nav className='h-full flex flex-col space-y-3 pt-5 px-5 border-r shadow-sm'>
             <div>
 
-                {open ? <img src="./images/angle-left-solid.svg" className='w-[17px] h-[30px] cursor-pointer' alt="open menu" onClick={() => {setOpen(!open)}}></img> : <img src="./images/angle-right-solid.svg" className='w-[17px] h-[30px] mx-auto cursor-pointer' alt="close menu" onClick={() => {setOpen(!open)}}></img>}
+                {open ? <img src="./images/angle-left-solid.svg" className='w-[17px] h-[30px] mb-[30px] cursor-pointer' alt="open menu" onClick={() => {setOpen(!open)}}></img> : <img src="./images/angle-right-solid.svg" className='w-[17px] h-[30px] mx-auto mb-[30px] cursor-pointer' alt="close menu" onClick={() => {setOpen(!open)}}></img>}
 
                 {Menus.map(menu => {
                     return (
@@ -37,7 +37,7 @@ const Dashside = () => {
                          })}
                 <div>
                 <button
-                  className={`flex justify-center align-middle items-center mt-3.5 font-bold bg-blue-600 gap-2 rounded-xl text-white ${open ? 'w-[150px] px-6' : 'w-[40px]'} h-[30px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}>
+                  className={`flex justify-center align-middle items-center mt-[70px] font-bold bg-blue-600 gap-2 rounded-xl text-white ${open ? 'w-[150px] px-6' : 'w-[40px]'} h-[30px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}>
                   <img src={Logout} alt="Logout" className="w-5 aspect-square m-auto" />
                   <span className={`${!open ? 'translate-x-[-208px] hidden' : 'translate-x-0'} w-full `}>Log Out</span>
                 </button>

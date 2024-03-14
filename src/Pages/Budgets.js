@@ -12,7 +12,8 @@ import Plus from '../assets/plus-solid.svg'
 import BudgetForm from '../Components/BudgetForm';
 
 const Budgets = () => {
-  const [showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(false);
+  
   const budgetList = [
     {budgetName: "Groceries", icon: Groceriesicon, alt: "gas", percent: 83, spent: 1000, total: 1200 },
     {budgetName: "Restaurants", icon: Restauranticon, alt: "Res icon", percent: 75, spent: 300, total: 400},
