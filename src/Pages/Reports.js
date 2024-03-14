@@ -3,16 +3,19 @@ import Header from '../Components/Header'
 import Dashside from '../Components/Dashside'
 import Plus from '../assets/plus-solid.svg';
 import { useState } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
-import PieData from '../Data/PieData'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale } from 'chart.js';
+import { Pie, Line, Bar} from 'react-chartjs-2';
+import PieExpenseData from '../Data/PieExpenseData'
+import PieIncomeData from '../Data/PieIncomeData'
+import MultiChartData from '../Data/MultiChartData'
 
 const Reports = () => {
-    ChartJS.register(ArcElement, Tooltip, Legend);
+    ChartJS.register(ArcElement,CategoryScale,LinearScale,Tooltip, Legend);
+
 
     const [year, setYear] = useState(2023);
     const [chartType, setChartType] = useState('bar');
-    const [transactionType, setTransactionType] = useState('income');
+    const [transactionType, setTransactionType] = useState('expense');
     const [multiChartType, setMultiChartType] = useState('line');
     const [multiChartYear, setMultiChartYear] = useState('Line/Bar')
 
@@ -50,7 +53,7 @@ const Reports = () => {
     <Dashside/>
 
     <main className='p-4 sm:ml-[80px]'>
-        <section className='col-rows-12 mt-[20px]'>
+        <section className=' grid-cols-12 grid-rows-12 mt-[20px]'>
           <div className='row-start-1 row-span-2 mb-[20px]'><h1 className='text-[22px] font-bold'>Monthly Reports</h1></div>
 
           {/* Monthly summary filter options */}
@@ -99,9 +102,42 @@ const Reports = () => {
           </div>
 
           {/* Charts Here */}
-          <div className='flex flex-row overflow-x-scroll '> 
+          <div className='flex flex-row col-start-2 col-span-10 h-[350px] mt-[30px] overflow-x-scroll overflow-y-hidden'> 
             <div className='row-span-6 h-[600px]'>
-              <Pie data={PieData}/>
+            <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            </div>
+            <div className='row-span-6 h-[600px]'>
+              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
           </div>
 
@@ -133,6 +169,7 @@ const Reports = () => {
                  className={filterStyles}
                  value={multiChartType}
                  onChange={handleMultiChartType}>
+                  <option value="bar">Pie Chart</option>
                  <option value="bar">Bar Chart</option>
                  <option value="line">Line Chart</option>
                </select>
@@ -141,7 +178,9 @@ const Reports = () => {
           </div>
 
           {/* Charts Here */}
-          <div></div>
+          {/* <div>
+            <Bar data={MultiChartData}/>
+          </div> */}
 
         </section>
         <section className='col-rows-12 mt-[20px]'>
