@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Orb = () => {
-
-    <div className='absolute h-[70vh] w-[70vh] rounded-full ml-[-37vh] mt-[-37vh] bg-blue-600 blur-[100px]'>
+    return (
+    <div className='fixed bottom-40 right-[300px] z-[-100] opacity-50 rounded-full bg-blue-600 w-[348px] h-[348px] blur-[100px]'>
 
     </div>
+    );
 
 }
 

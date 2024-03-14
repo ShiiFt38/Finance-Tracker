@@ -19,7 +19,7 @@ function LoginPage() {
           <input id="passwordInput" type="password" className="sr-only" />
         </label>
       </section>
-      <Button text="Sign in" />
+      <Button text="Sign in" link={"/Reports"}/>
       <div className="mt-3 text-center leading-[150%]">OR</div>
       <Button
         text="Sign in with Google"
