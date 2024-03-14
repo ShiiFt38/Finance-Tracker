@@ -14,7 +14,7 @@ const data = {
   }, {
     type: 'line',
     label: 'Expenses',
-    data: [50, 50, 50, 50],
+    data: [2240, 3000, 450, 7650],
     fill: false,
     borderColor: 'rgb(54, 162, 235)'
   }]

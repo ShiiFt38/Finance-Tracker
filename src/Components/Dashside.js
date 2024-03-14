@@ -21,8 +21,8 @@ const Dashside = () => {
     ];
 
   return (
-    <aside className={`absolute z-40 bg-white h-screen fixed transition-all rounded-[10px] overflow-hidden duration-1000ms ease-in ${open ? 'w-[220px]' : 'w-[75px]'}`}>
-        <nav className='h-full flex flex-col space-y-3 pt-5 px-5 border-r shadow-sm'>
+    <aside className={`absolute z-40 bg-white h-screen transition-all rounded-[10px] overflow-hidden duration-1000ms ease-in ${open ? 'w-[220px]' : 'w-[75px]'}`}>
+        <nav className='h-full flex sticky flex-col space-y-3 pt-5 px-5 border-r shadow-sm'>
             <div>
 
                 {open ? <img src="./images/angle-left-solid.svg" className='w-[17px] h-[30px] mb-[30px] cursor-pointer' alt="open menu" onClick={() => {setOpen(!open)}}></img> : <img src="./images/angle-right-solid.svg" className='w-[17px] h-[30px] mx-auto mb-[30px] cursor-pointer' alt="close menu" onClick={() => {setOpen(!open)}}></img>}

@@ -4,10 +4,11 @@ import Dashside from '../Components/Dashside'
 import Plus from '../assets/plus-solid.svg';
 import { useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale } from 'chart.js';
-import { Pie, Line, Bar} from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import PieExpenseData from '../Data/PieExpenseData'
 import PieIncomeData from '../Data/PieIncomeData'
-import MultiChartData from '../Data/MultiChartData'
+import MultiChart from '../Components/Charts/MultiChart';
+
 
 const Reports = () => {
     ChartJS.register(ArcElement,CategoryScale,LinearScale,Tooltip, Legend);
@@ -102,41 +103,41 @@ const Reports = () => {
           </div>
 
           {/* Charts Here */}
-          <div className='flex flex-row col-start-2 col-span-10 h-[350px] mt-[30px] overflow-x-scroll overflow-y-hidden'> 
-            <div className='row-span-6 h-[600px]'>
+          <div className='flex flex-row snap-mandatory col-start-2 col-span-10 h-[350px] mt-[30px] overflow-x-scroll overflow-y-hidden'> 
+            <div className='row-span-6 h-[600px] snap-start'>
             <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
-            <div className='row-span-6 h-[600px]'>
+            <div className='row-span-6 h-[600px] snap-start'>
               <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
             </div>
           </div>
@@ -146,7 +147,7 @@ const Reports = () => {
           <div className='row-start-1 row-span-2'><h1 className='text-[22px] font-bold'>Income vs Expense Summary</h1></div>
 
           {/* Income vs Expense filter options */}
-          <div className='flex md:place-content-end sm:place-content-center mb-[20px] gap-[20px] row-start-3 row-span-2'>
+          <div className='flex md:place-content-end sm:place-content-center my-[20px] gap-[20px] row-start-3 row-span-2'>
 
             <div className='md:w-[120px] sm:w-[80px] h-full'>
             <label className={filterLabels} htmlFor="year">Year:</label>
@@ -178,9 +179,7 @@ const Reports = () => {
           </div>
 
           {/* Charts Here */}
-          {/* <div>
-            <Bar data={MultiChartData}/>
-          </div> */}
+          <div className='h-[500px]'><MultiChart/></div>
 
         </section>
         <section className='col-rows-12 mt-[20px]'>
