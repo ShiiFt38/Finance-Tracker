@@ -40,7 +40,7 @@ const MultiChart = () => {
 
 
   return (
-    <div className='h-[400px] flex plcae-content-center'> <canvas className='mx-auto' ref={chartRef}/> </div>
+    <div className='h-[400px] w-full flex plcae-content-center'> <canvas className='mx-auto' ref={chartRef}/> </div>
   )
 }
 

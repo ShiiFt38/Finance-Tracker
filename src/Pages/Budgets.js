@@ -14,13 +14,18 @@ import BudgetForm from '../Components/BudgetForm';
 const Budgets = () => {
   const [showForm, setShowForm] = useState(false);
   
-  const budgetList = [
-    {budgetName: "Groceries", icon: Groceriesicon, alt: "gas", percent: 83, spent: 1000, total: 1200 },
-    {budgetName: "Restaurants", icon: Restauranticon, alt: "Res icon", percent: 75, spent: 300, total: 400},
-    {budgetName: "Gas", icon: Gasicon, percent: 67, alt: "Gas", spent: 200, total: 300}
+  const [budgetList, setBudgetList] = useState([
+    {id: 1, budgetName: "Groceries", icon: Groceriesicon, alt: "gas", percent: 83, spent: 1000, total: 1200 },
+    {id: 2, budgetName: "Restaurants", icon: Restauranticon, alt: "Res icon", percent: 75, spent: 300, total: 400},
+    {id: 3, budgetName: "Gas", icon: Gasicon, percent: 67, alt: "Gas", spent: 200, total: 300}
   ]
+);
 
+const handleDelete = (id) => {
+  const updatedBudgetList = budgetList.filter(budget => budget.id !== id)
 
+  setBudgetList(updatedBudgetList);
+}
 
   return (
     <>
@@ -28,7 +33,7 @@ const Budgets = () => {
     <Dashside/>
     <Orb/>
 
-    <main class="p-4 sm:ml-[80px]">
+    <main className ="p-4 sm:ml-[80px]">
         {showForm ? <BudgetForm onClose={() => setShowForm(false)}/> : null}
         <h1 className='text-[22px] font-bold'>Budgets</h1>
 
@@ -42,7 +47,7 @@ const Budgets = () => {
           {/* <Orb/> */}
           {budgetList.map(budget => {
                return (
-               <article className='flex mt:5 sm:mt-[10px] md:mt-[20px] bg-white flex-wrap md:flex-row justify-between gap-[10px] min-h-[70px] justify-between py-2 rounded-xl px-5 '>
+               <article key={budget.id} className='flex mt:5 sm:mt-[10px] md:mt-[20px] bg-white flex-wrap md:flex-row justify-between gap-[10px] min-h-[70px] justify-between py-2 rounded-xl px-5 '>
                 {/* budget info */}
                   <div className='grid grid-cols-4 w-[200px]'>
                     <div className='cols-start-1 align-middle cols-span-1'>
@@ -61,7 +66,11 @@ const Budgets = () => {
                   </div>
 
                   <div className='flex flex-row gap-7 ml-auto my-auto'>
-                    <img alt="icon" className='w-[16px] cursor-pointer' src={Trash}></img>
+                    <button className='' onClick={() => {
+                      handleDelete(budget.id)
+                    }}>
+                      <img alt="icon" className='w-[16px] cursor-pointer' src={Trash}></img>
+                    </button>
                     <img alt="icon" className='w-[16px] cursor-pointer' src={Edit}></img>
                   </div>
                 </article>

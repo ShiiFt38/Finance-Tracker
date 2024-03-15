@@ -4,10 +4,9 @@ import Dashside from '../Components/Dashside'
 import Plus from '../assets/plus-solid.svg';
 import { useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
-import PieExpenseData from '../Data/PieExpenseData'
-import PieIncomeData from '../Data/PieIncomeData'
 import MultiChart from '../Components/Charts/MultiChart';
+import PieChart from '../Components/Charts/PieChart';
+import BarChart from '../Components/Charts/BarChart';
 
 
 const Reports = () => {
@@ -15,7 +14,7 @@ const Reports = () => {
 
 
     const [year, setYear] = useState(2023);
-    const [chartType, setChartType] = useState('bar');
+    const [chartType, setChartType] = useState('pie');
     const [transactionType, setTransactionType] = useState('expense');
     const [multiChartType, setMultiChartType] = useState('line');
     const [multiChartYear, setMultiChartYear] = useState('Line/Bar')
@@ -54,7 +53,7 @@ const Reports = () => {
     <Dashside/>
 
     <main className='p-4 sm:ml-[80px]'>
-        <section className=' grid-cols-12 grid-rows-12 mt-[20px]'>
+        <section className='snap-mandatory grid-cols-12 grid-rows-12 mt-[20px]'>
           <div className='row-start-1 row-span-2 mb-[20px]'><h1 className='text-[22px] font-bold'>Monthly Reports</h1></div>
 
           {/* Monthly summary filter options */}
@@ -83,8 +82,8 @@ const Reports = () => {
                  className={filterStyles}
                  value={chartType}
                  onChange={handleChartTypeChange}>
-                 <option value="bar">Bar Chart</option>
-                 <option value="line">Line Chart</option>
+                 <option value="pie">Pie</option>
+                 <option value="bar">Bar</option>
                  {/* Add more options for other chart types */}
                </select>
             </div>
@@ -103,43 +102,56 @@ const Reports = () => {
           </div>
 
           {/* Charts Here */}
-          <div className='flex flex-row snap-mandatory col-start-2 col-span-10 h-[350px] mt-[30px] overflow-x-scroll overflow-y-hidden'> 
-            <div className='row-span-6 h-[600px] snap-start'>
-            <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+          <div className='flex flex-row gap-[50px] snap-mandatory col-start-2 col-span-10 h-[370px] mt-[30px] overflow-x-scroll overflow-y-hidden'> 
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>January</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>February</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>March</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>April</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>May</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>June</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>July</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>August</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>September</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>October</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>November</h1>
             </div>
-            <div className='row-span-6 h-[600px] snap-start'>
-              <Pie data={transactionType === "expense" ? PieExpenseData : PieIncomeData}/>
+            <div className='row-span-6 h-full snap-start'>
+              {chartType === "pie" ? <PieChart transactionType={transactionType}/> : <BarChart transactionType={transactionType}/> }
+              <h1 className='m-auto font-bold text-[15px] w-full text-center mt-[10px]'>December</h1>
             </div>
+            
           </div>
 
         </section>
@@ -170,9 +182,8 @@ const Reports = () => {
                  className={filterStyles}
                  value={multiChartType}
                  onChange={handleMultiChartType}>
-                  <option value="bar">Pie Chart</option>
-                 <option value="bar">Bar Chart</option>
-                 <option value="line">Line Chart</option>
+                  <option value="bar">Pie</option>
+                 <option value="line">Line/Bar</option>
                </select>
             </div>
 

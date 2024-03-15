@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const BudgetForm = ({ onClose }) => {
+  const [budgetFormData, setBudgetFormData] = useState({
+    category: "", totalAmount: ""}
+  )
+
+  console.log(budgetFormData)
+
+  const handleChange = (event) => {
+    setBudgetFormData(prevFormData => {
+      return {
+        ...prevFormData,
+        [event.target.name]: event.target.value
+      }
+    })
+  }
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
@@ -10,7 +24,7 @@ const BudgetForm = ({ onClose }) => {
             
           <div className="mb-4">
             <label htmlFor="category" className="font-semibold text-gray-600 block mb-1">Select Category</label>
-            <select id="category" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+            <select id="category" onChange={handleChange} name="category" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
               <option value="Groceries">Groceries</option>
               <option value="Gas">Gas</option>
               <option value="Restaurants">Restaurants</option>
@@ -26,7 +40,7 @@ const BudgetForm = ({ onClose }) => {
 
           <div className="mb-4">
             <label htmlFor="amount" className="font-semibold text-gray-600 block mb-1">Total Amount</label>
-            <input type="number" id="amount" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500" placeholder="How much are you budgeting?" />
+            <input onChange={handleChange} type="number" id="amount" name="totalAmount" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500" placeholder="How much are you budgeting?" />
           </div>
 
           <div className='flex flex-row w-full place-content-end gap-5'>
