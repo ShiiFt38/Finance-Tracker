@@ -43,8 +43,10 @@ const Dashside = () => {
                 </button>
 
                     <div className={`flex px-2 w-[180px] space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
-                        <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Settingsicon} alt='settings' />
-                        <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'}`}>Settings</p>
+                        <Link to='/Settings'>
+                            <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Settingsicon} alt='settings' />
+                            <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'}`}>Settings</p>
+                        </Link>
                     </div>
                     <div className={`flex px-2 w-[180px] space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
                         <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Helpicon} alt='help' />

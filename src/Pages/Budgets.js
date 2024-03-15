@@ -10,9 +10,11 @@ import Trash from '../assets/trash-solid.svg'
 import Edit from '../assets/pen-to-square-solid.svg'
 import Plus from '../assets/plus-solid.svg'
 import BudgetForm from '../Components/BudgetForm';
+import EditBudgetForm from '../Components/EditBudgetForm';
 
 const Budgets = () => {
-  const [showForm, setShowForm] = useState(false);
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [showEditForm, setShowEditForm] = useState(false);
   
   const [budgetList, setBudgetList] = useState([
     {id: 1, budgetName: "Groceries", icon: Groceriesicon, alt: "gas", percent: 83, spent: 1000, total: 1200 },
@@ -25,7 +27,17 @@ const handleDelete = (id) => {
   const updatedBudgetList = budgetList.filter(budget => budget.id !== id)
 
   setBudgetList(updatedBudgetList);
-}
+};
+
+const handleEdit = (id) => {
+  const index = budgetList.findIndex(item => item.id === id);
+  const editedBudget = budgetList[index];
+
+  setShowEditForm(true);
+  return editedBudget;
+
+  }
+
 
   return (
     <>
@@ -34,12 +46,13 @@ const handleDelete = (id) => {
     <Orb/>
 
     <main className ="p-4 sm:ml-[80px]">
-        {showForm ? <BudgetForm onClose={() => setShowForm(false)}/> : null}
+        {showAddForm ? <BudgetForm onClose={() => setShowAddForm(false)}/> : null}
+        {showEditForm ? <EditBudgetForm onClose={() => setShowEditForm(false)}/> : null}
         <h1 className='text-[22px] font-bold'>Budgets</h1>
 
         <section className=''>
           <article className='flex place-content-center align-middle rounded-xl mt-[20px] mb-10 bg-white h-[70px]'>
-            <button onClick={() => {setShowForm(true)}} className='bg-gray-300 m-auto rounded-md hover:bg-gray-700 w-[45px] h-[45px]'>
+            <button onClick={() => {setShowAddForm(true)}} className='bg-gray-300 m-auto rounded-md hover:bg-gray-700 w-[45px] h-[45px]'>
               <img src={Plus} alt='Add budget' className='m-auto w-[16px]'/>
             </button>
           </article>
@@ -71,7 +84,11 @@ const handleDelete = (id) => {
                     }}>
                       <img alt="icon" className='w-[16px] cursor-pointer' src={Trash}></img>
                     </button>
-                    <img alt="icon" className='w-[16px] cursor-pointer' src={Edit}></img>
+                    <button onClick={() => {
+                      handleEdit(budget.id)
+                    }}>
+                      <img alt="icon" className='w-[16px] cursor-pointer' src={Edit}></img>
+                      </button>
                   </div>
                 </article>
                 )

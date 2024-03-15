@@ -29,6 +29,10 @@ const MultiChart = () => {
                   fill: false,
                   borderColor: 'rgb(54, 162, 235)'
                 }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
               }
         })
         return () => {
@@ -40,7 +44,7 @@ const MultiChart = () => {
 
 
   return (
-    <div className='h-[400px] w-full flex plcae-content-center'> <canvas className='mx-auto' ref={chartRef}/> </div>
+    <div className='h-fit w-full flex place-content-center'> <canvas className='w-full mx-auto h-[400px]' ref={chartRef}/> </div>
   )
 }
 

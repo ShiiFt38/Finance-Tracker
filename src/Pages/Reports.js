@@ -190,7 +190,7 @@ const Reports = () => {
           </div>
 
           {/* Charts Here */}
-          <div className='h-[500px]'><MultiChart/></div>
+          <div className='h-fit overflow-x-scroll'><MultiChart/></div>
 
         </section>
         <section className='col-rows-12 mt-[20px]'>

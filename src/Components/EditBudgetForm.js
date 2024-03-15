@@ -1,31 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react';
 
-const BudgetForm = ({ onClose }) => {
-  const [budgetFormData, setBudgetFormData] = useState({
-    category: "", totalAmount: ""}
-  )
+const EditBudgetForm = ({budget, onSave, onClose}) => {
+    const [editedBudget, setEditedBudget] = useState({...budget});
 
-  console.log(budgetFormData)
+    const handleChange = (e) => {
+        setEditedBudget(prevState => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }));
+        console.log(editedBudget)
+    };
 
-  const handleChange = (event) => {
-    setBudgetFormData(prevFormData => {
-      return {
-        ...prevFormData,
-        [event.target.name]: event.target.value
-      }
-    })
-  }
-  
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSave(editedBudget);
+    }
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-xl font-semibold mb-4">Add Budget</h2>
+        <h2 className="text-xl font-semibold mb-4">Edit Budget</h2>
 
         <form>
             
           <div className="mb-4">
             <label htmlFor="category" className="font-semibold text-gray-600 block mb-1">Select Category</label>
-            <select id="category" onChange={handleChange} name="category" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
+            <select id="category" onChange={handleChange} name="budgetName" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500">
               <option value="Groceries">Groceries</option>
               <option value="Gas">Gas</option>
               <option value="Restaurants">Restaurants</option>
@@ -41,7 +42,7 @@ const BudgetForm = ({ onClose }) => {
 
           <div className="mb-4">
             <label htmlFor="amount" className="font-semibold text-gray-600 block mb-1">Total Amount</label>
-            <input onChange={handleChange} type="number" id="amount" name="totalAmount" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500" placeholder="How much are you budgeting?" />
+            <input type="number" id="amount" onChange={handleChange} name="total" text="5000" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500" placeholder="How much are you budgeting?" />
           </div>
 
           <div className='flex flex-row w-full place-content-end gap-5'>
@@ -49,7 +50,7 @@ const BudgetForm = ({ onClose }) => {
               <button onClick={onClose} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Cancel</button>
             </div>
             <div className="text-right">
-              <button type="submit" onClick={(e) => {e.preventDefault()}}className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+              <button type="submit" onClick={handleSubmit}className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Save</button>
             </div>
           </div>
 
@@ -57,7 +58,7 @@ const BudgetForm = ({ onClose }) => {
 
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BudgetForm
+export default EditBudgetForm

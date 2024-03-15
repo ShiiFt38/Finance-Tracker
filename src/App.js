@@ -7,6 +7,7 @@ import TipsTricks2 from './Pages/TipsTricks2';
 import TipsTricks3 from './Pages/TipsTricks3';
 import Budgets from './Pages/Budgets';
 import Reports from './Pages/Reports';
+import Settings from './Pages/Settings';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path='/Reports-Tips' element={<TipsTricks3/>}></Route>
       <Route path='/Budgets' element={<Budgets/>}></Route>
       <Route path='/Reports' element={<Reports/>}></Route>
+      <Route path='/Settings' element={<Settings/>}></Route>
     </Routes>
   )
 }
