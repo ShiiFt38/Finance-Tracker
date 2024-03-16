@@ -7,11 +7,13 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearSca
 import MultiChart from '../Components/Charts/MultiChart';
 import PieChart from '../Components/Charts/PieChart';
 import BarChart from '../Components/Charts/BarChart';
+import { useAccentColor } from '../Context/AccentColorContext';
 
 
 const Reports = () => {
     ChartJS.register(ArcElement,CategoryScale,LinearScale,Tooltip, Legend);
 
+    const {accentColor} = useAccentColor();
 
     const [year, setYear] = useState(2023);
     const [chartType, setChartType] = useState('pie');
@@ -45,7 +47,7 @@ const Reports = () => {
 
 
     const filterLabels = "block md:text-sm sm:text-[14px] font-medium mb-1"
-    const filterStyles = "md:w-full sm:w-[70px] rounded-xl sm:text-[10px] md:text-[14px] bg-blue-500 border border-gray-300 sm:px-1 md:px-3 text-white focus:outline-none font-bold focus:ring-1 focus:ring-indigo-500"
+    const filterStyles = `md:w-full sm:w-[70px] rounded-xl sm:text-[10px] md:text-[14px] ${accentColor} border border-gray-300 sm:px-1 md:px-3 text-white focus:outline-none font-bold focus:ring-1 focus:ring-indigo-500`
 
   return (
     <>
@@ -84,7 +86,6 @@ const Reports = () => {
                  onChange={handleChartTypeChange}>
                  <option value="pie">Pie</option>
                  <option value="bar">Bar</option>
-                 {/* Add more options for other chart types */}
                </select>
             </div>
 
