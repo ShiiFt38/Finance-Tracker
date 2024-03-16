@@ -20,8 +20,8 @@ const MultiChart = () => {
                   type: 'bar',
                   label: 'Income',
                   data: [8000, 10500, 8500, 9800, 7970,8025,6988,7992,8012,12983,8008,5990],
-                  borderColor: 'rgb(255, 99, 132)',
-                  backgroundColor: 'rgb(200, 50, 0)'
+                  borderColor: 'rgb(0, 255, 0)',
+                  backgroundColor: 'rgb(0, 255, 0)'
                 }, {
                   type: 'line',
                   label: 'Expenses',

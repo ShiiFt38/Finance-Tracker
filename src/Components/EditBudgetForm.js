@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
+import { useAccentColor } from '../Context/AccentColorContext';
 
 const EditBudgetForm = ({budget, onSave, onClose}) => {
+  const {accentColor} = useAccentColor();
     const [editedBudget, setEditedBudget] = useState({...budget});
 
     const handleChange = (e) => {
@@ -47,10 +49,10 @@ const EditBudgetForm = ({budget, onSave, onClose}) => {
 
           <div className='flex flex-row w-full place-content-end gap-5'>
             <div className="text-right">
-              <button onClick={onClose} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Cancel</button>
+              <button onClick={onClose} className={`${accentColor} text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600`}>Cancel</button>
             </div>
             <div className="text-right">
-              <button type="submit" onClick={handleSubmit}className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Save</button>
+              <button type="submit" onClick={handleSubmit}className={`${accentColor} text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600`}>Save</button>
             </div>
           </div>
 

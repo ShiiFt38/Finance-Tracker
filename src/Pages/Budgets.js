@@ -44,6 +44,7 @@ const handleEdit = (id) => {
     <Header hidden="hidden" />
     <Dashside/>
     <Orb/>
+    <Orb/>
 
     <main className ="p-4 sm:ml-[80px]">
         {showAddForm ? <BudgetForm onClose={() => setShowAddForm(false)}/> : null}

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useAccentColor } from '../Context/AccentColorContext';
 
 const BudgetForm = ({ onClose }) => {
+  const {accentColor} = useAccentColor(); 
+
   const [budgetFormData, setBudgetFormData] = useState({
     category: "", totalAmount: ""}
   )
@@ -46,10 +49,10 @@ const BudgetForm = ({ onClose }) => {
 
           <div className='flex flex-row w-full place-content-end gap-5'>
             <div className="text-right">
-              <button onClick={onClose} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Cancel</button>
+              <button onClick={onClose} className={`${accentColor} text-white px-4 py-2 rounded-md hover:${accentColor} focus:outline-none focus:${accentColor}`}>Cancel</button>
             </div>
             <div className="text-right">
-              <button type="submit" onClick={(e) => {e.preventDefault()}}className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+              <button type="submit" onClick={(e) => {e.preventDefault()}}className={`${accentColor} text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600`}>Submit</button>
             </div>
           </div>
 

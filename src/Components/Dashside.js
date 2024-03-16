@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Homeicon from '../assets/Home.png';
 import Transactionicon from '../assets/transaction.png'
 import Budgetsicon from '../assets/budget.png';
-import Goalsicon from '../assets/Goals.png';
+// import Goalsicon from '../assets/Goals.png';
 import Reportsicon from '../assets/Reports.png'
 import Settingsicon from  "../assets/Settings.png";
 import Helpicon from '../assets/Help.png';
@@ -16,10 +16,10 @@ const Dashside = () => {
     const { accentColor } = useAccentColor();
 
     const Menus = [
-        {name: "Dashboard", icon: Homeicon, alt: "home", link: " "},
-        {name: "Transactions", icon:Transactionicon, alt: "transaction", link: " "},
+        {name: "Dashboard", icon: Homeicon, alt: "home", link: "/Dashboard"},
+        {name: "Transactions", icon:Transactionicon, alt: "transaction", link: "/Transactions"},
         {name: "Budgets", icon: Budgetsicon, alt: "Budget", link: "/Budgets" },
-        {name: "Goals", icon: Goalsicon, alt: "Goals", link: " "},
+        // {name: "Goals", icon: Goalsicon, alt: "Goals", link: " "},
         {name: "Reports", icon: Reportsicon, alt: "Reports", link: "/Reports"}
     ];
 
@@ -45,12 +45,10 @@ const Dashside = () => {
                   <span className={`${!open ? 'translate-x-[-208px] hidden' : 'translate-x-0'} w-full `}>Log Out</span>
                 </button>
 
-                    <div className={`flex px-2 w-[180px] space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
-                        <Link to='/Settings'>
+                        <Link to='/Settings' className={`flex px-2 w-[180px] sticky space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
                             <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Settingsicon} alt='settings' />
                             <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'}`}>Settings</p>
                         </Link>
-                    </div>
                     <div className={`flex px-2 w-[180px] space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
                         <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Helpicon} alt='help' />
                         <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'}`}>Help</p>
