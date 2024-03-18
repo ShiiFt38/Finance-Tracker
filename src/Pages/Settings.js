@@ -42,6 +42,7 @@ const optionStyles ='flex py-[8px] flex space-between w-[90%] mx-auto bg-gray-30
 
         <main className='w-full h-full flex flex-col flex-1'>
             <Orb/>
+            <Orb/>
 
             {/* Accent color option */}
             <div className='flex flex-col sm:w-[90%] md:w-[75%] mx-auto'>

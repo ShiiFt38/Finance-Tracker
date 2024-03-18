@@ -73,13 +73,13 @@ const handleEdit = (id) => {
                     </div>
                   </div>
 
-                  <div className='flex order-lastjustify-center font-bold w-[200px]'>
+                  <div className='flex sm:order-last md:order-2 justify-center font-bold w-[200px]'>
                     <Bar
                       percent = {budget.percent}
                     />
                   </div>
 
-                  <div className='flex flex-row gap-7 ml-auto my-auto'>
+                  <div className='flex flex-row gap-7 sm:order-2 md:order-last ml-auto my-auto'>
                     <button className='' onClick={() => {
                       handleDelete(budget.id)
                     }}>

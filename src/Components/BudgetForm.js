@@ -52,7 +52,7 @@ const BudgetForm = ({ onClose }) => {
               <button onClick={onClose} className={`${accentColor} text-white px-4 py-2 rounded-md hover:${accentColor} focus:outline-none focus:${accentColor}`}>Cancel</button>
             </div>
             <div className="text-right">
-              <button type="submit" onClick={(e) => {e.preventDefault()}}className={`${accentColor} text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600`}>Submit</button>
+              <button type="submit" onClick={(e) => {e.preventDefault()}}className={`${accentColor} text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600`}>Add</button>
             </div>
           </div>
 
