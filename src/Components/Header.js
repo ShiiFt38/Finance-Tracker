@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SignInButton from './Button';
+import Button from './Button';
 
 
 function Header({hidden}) {
@@ -21,7 +21,7 @@ function Header({hidden}) {
         <Link to='/Login' className=" w-[89px] font-bold text-[#197fe5] m-auto text-[14px] align-middle">
           Log in
         </Link>
-        <SignInButton text="Sign Up" link="/Login"/>
+        <Button text="Sign Up" link="/SignUp"/>
       </div>
 
   </header>

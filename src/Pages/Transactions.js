@@ -105,7 +105,7 @@ const Transactions = () => {
                         </div>
                     </div>
 
-                    <div className='flex justify-center font-bold w-[200px]'>
+                    <div className='flex justify-center my-auto font-bold w-[200px]'>
                         {transaction.amount < 0 ? <span className='text-red-400'>$</span> : <span className='text-blue-400'>+$</span>}<p className='font-normal'>{transaction.amount}</p>
                     </div>
 

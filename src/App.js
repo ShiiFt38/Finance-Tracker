@@ -10,6 +10,7 @@ import Transactions from './Pages/Transactions';
 import Budgets from './Pages/Budgets';
 import Reports from './Pages/Reports';
 import Settings from './Pages/Settings';
+import SignUpPage from './Pages/SignUpPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage />}></Route>
       <Route path='/Login' element={<LoginPage/>}></Route>
+      <Route path='/SignUp' element={<SignUpPage/>}></Route>
       <Route path='/Tracking-Tips' element={<TipsTricks1/>}></Route>
       <Route path='/Dashboards-Tips' element={<TipsTricks2/>}></Route>
       <Route path='/Reports-Tips' element={<TipsTricks3/>}></Route>
