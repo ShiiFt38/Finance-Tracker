@@ -3,11 +3,9 @@ import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 // import GoogleIcon from '../assets/google.svg'
 import Orb from '../Components/Orb';
-import { useAccentColor } from '../Context/AccentColorContext';
 
 
 function LoginPage() {
-  const {accentColor} = useAccentColor();
 
   const [ loginDetails, setLoginDetails ] = useState({
     email: "",
@@ -50,10 +48,12 @@ function LoginPage() {
             placeholder='Password' 
             className='justify-center border invalid:border-pink-500 invalid:text-pink-600 items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full' />
 
-            <button className={`flex justify-center align-middle m-auto items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap ${accentColor} rounded-xl text-white sm:w-[230px] sm:h-[30px] md:h-[35px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}>Sign in</button>
+            <button className={`flex justify-center align-middle m-auto items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap bg-blue-500 rounded-xl text-white sm:w-[230px] sm:h-[30px] md:h-[35px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}>Sign in</button>
       </form>
 
       <p className='font-light mt-[30px] text-gray-600'>New to FinTrackR? <Link to='/SignUp' className='font-bold'>Sign up</Link></p>
+      <p className='font-light my-[10px]'>OR</p>
+      <Link to='/Dashboard'><p className='font-bold'>Try the demo</p></Link>
       {/* <div className="mt-16 mb-8 text-center whitespace-nowrap leading-[150%] max-md:mt-10">Forgot your email or password?</div> */}
     </main>
     </>

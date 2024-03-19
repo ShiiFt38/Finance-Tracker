@@ -39,11 +39,13 @@ const Dashside = () => {
                             )
                          })}
                 <div>
+                <Link to='/'>
                 <button
                   className={`flex justify-center align-middle items-center mt-[70px] font-bold ${accentColor} gap-2 rounded-xl text-white ${open ? 'w-[150px] px-6' : 'w-[40px]'} h-[30px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}>
                   <img src={Logout} alt="Logout" className="w-5 aspect-square m-auto" />
                   <span className={`${!open ? 'translate-x-[-208px] hidden' : 'translate-x-0'} w-full `}>Log Out</span>
                 </button>
+                </Link>
 
                         <Link to='/Settings' className={`flex px-2 w-[180px] sticky space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
                             <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Settingsicon} alt='settings' />

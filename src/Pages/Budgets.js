@@ -49,7 +49,7 @@ const handleEdit = (id) => {
     <main className ="p-4 sm:ml-[80px]">
         {showAddForm ? <BudgetForm onClose={() => setShowAddForm(false)}/> : null}
         {showEditForm ? <EditBudgetForm onClose={() => setShowEditForm(false)}/> : null}
-        <h1 className='text-[22px] font-bold'>Budgets</h1>
+        <h1 className='md:text-[22px] sm:text-[18px] font-bold'>Budgets</h1>
 
         <section className=''>
           <article className='flex place-content-center align-middle rounded-xl mt-[20px] mb-10 bg-white h-[70px]'>

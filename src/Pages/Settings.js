@@ -36,7 +36,7 @@ const optionStyles ='flex py-[8px] flex space-between w-[90%] mx-auto bg-gray-30
                 <img src={LeftArrow} onClick={handleClick} alt="back button" className='w-[26px] h-[24px] mt-[20px] mx-auto cursor-pointer' />
             </div>
             <div className="md:items-start sm:place-items-center self-stretch w-full m-auto">
-              <h1 className="font-bold text-[18px]">Settings</h1>
+              <h1 className="font-bold sm:text-[18px] md:text-[22px]">Settings</h1>
             </div>
         </header>
 

@@ -52,7 +52,7 @@ const Transactions = () => {
 
     <main className='p-4 sm:ml-[80px]'>
         {showForm ? <AddTransactionForm onClose={() => setShowForm(false)} /> : null}
-        <h1 className='text-[22px] font-bold'>Transactions</h1>
+        <h1 className='md:text-[22px] sm:text-[18px] font-bold'>Transactions</h1>
 
         <section className='w-full flex flex-row md:place-content-end gap-[20px] sm:place-content-center '>
             <div className='md:w-[120px] sm:w-[80px] h-full'>

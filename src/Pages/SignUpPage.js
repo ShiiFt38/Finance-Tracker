@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import Header from '../Components/Header'
 import Orb from '../Components/Orb'
 import { Link } from 'react-router-dom'
-import { useAccentColor } from '../Context/AccentColorContext'
 
 
 const SignUpPage = () => {
-    const {accentColor} = useAccentColor();
 
     const [registrationDetails, setRegistrationDetails] = useState({
         username: '',
@@ -72,7 +70,7 @@ const SignUpPage = () => {
                 placeholder='Password (Confirm)' 
                 className={inputStyles}/>
 
-            <button className={`flex justify-center align-middle m-auto items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap ${accentColor} rounded-xl text-white sm:w-[230px] sm:h-[30px] md:h-[35px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`} type='submit'>Create Account</button>
+            <button className={`flex justify-center align-middle m-auto items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap bg-blue-500 rounded-xl text-white sm:w-[230px] sm:h-[30px] md:h-[35px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`} type='submit'>Create Account</button>
         
         </form>
 

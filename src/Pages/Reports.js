@@ -55,8 +55,8 @@ const Reports = () => {
     <Dashside/>
 
     <main className='p-4 sm:ml-[80px]'>
-        <section className='snap-mandatory grid-cols-12 grid-rows-12 mt-[20px]'>
-          <div className='row-start-1 row-span-2 mb-[20px]'><h1 className='text-[22px] font-bold'>Monthly Reports</h1></div>
+        <section className='snap-mandatory grid-cols-12 grid-rows-12'>
+          <div className='row-start-1 row-span-2 mb-[20px]'><h1 className='md:text-[22px] sm:text-[18px] font-bold'>Monthly Reports</h1></div>
 
           {/* Monthly summary filter options */}
           <div className='flex md:place-content-end  sm:place-content-center gap-[20px] row-start-3 row-span-2'>
@@ -157,7 +157,7 @@ const Reports = () => {
 
         </section>
         <section className='col-rows-12 mt-[20px]'>
-          <div className='row-start-1 row-span-2'><h1 className='text-[22px] font-bold'>Income vs Expense Summary</h1></div>
+          <div className='row-start-1 row-span-2'><h1 className='md:text-[22px] sm:text-[18px] font-bold'>Income vs Expense Summary</h1></div>
 
           {/* Income vs Expense filter options */}
           <div className='flex md:place-content-end sm:place-content-center my-[20px] gap-[20px] row-start-3 row-span-2'>
@@ -194,8 +194,8 @@ const Reports = () => {
           <div className='h-fit overflow-x-scroll'><MultiChart/></div>
 
         </section>
-        <section className='col-rows-12 mt-[20px]'>
-          <div className='row-start-1 row-span-2'><h1 className='text-[22px] font-bold'>Custom Reports</h1></div>
+        <section className='col-rows-12 mt-[30px]'>
+          <div className='row-start-1 row-span-2'><h1 className='md:text-[22px] sm:text-[18px] font-bold'>Custom Reports</h1></div>
 
           <div className='row-start-3 row-span-2'>
             <article className='flex place-content-center align-middle rounded-xl mt-[20px] mb-10 bg-white h-[70px]'>

@@ -19,7 +19,7 @@ function HomePage() {
             <p className='mx-30px align-middle text-center'>FinTracker is your all-in-one expense and income tracking web app designed to streamline your financial management. With FinTracker, you can effortlessly track your transactions, gain insights into your spending habits, and take control of your finances like never before. Our user-friendly interface allows you to input and categorize your transactions with ease, ensuring that you have a clear overview of your financial activities.</p>
           </div>
           <div className=''>
-            <Button text='Get started' link='/Budgets'/>
+            <Button text='Get started' link='/Dashboard'/>
           </div>
         </div>
 
