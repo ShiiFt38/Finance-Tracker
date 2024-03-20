@@ -32,7 +32,7 @@ const Dashside = () => {
 
                 {Menus.map(menu => {
                     return (
-                            <Link key={menu.name} to={menu.link} className={`flex px-2 w-[180px] sticky space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
+                            <Link key={menu.name} to={menu.link} className={`flex px-2 w-[180px] sticky space-x-3 ${!open ? 'hover:none' : `sm:hover:none md:hover:bg-gray-300`} p-2 rounded-xl`}>
                                 <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={menu.icon} alt={menu.alt} />
                                 <p className={`${!open ? 'translate-x-[-208px]' : 'translate-x-0'} font-medium`}>{menu.name}</p>
                             </Link>

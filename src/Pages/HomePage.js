@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import Button from '../Components/Button';
+import Message from '../Components/Message';
+import { useAccentColor } from '../Context/AccentColorContext';
 
 
 function HomePage() {
+  const [showMessage, setShowMessage] = useState(false);
+  const {accentColor} = useAccentColor()
+
   return (
     <>
     <Header />
     <main className="flex flex-col space-y-10  font-bold bg-white w-[100%] justify-center w-full">
+      {showMessage && <Message/>}
 
       {/* Introduction section */}
       <section className='grid grid-cols-12 w-[100%] mt-8 min-h-[400px] '>
@@ -18,9 +24,14 @@ function HomePage() {
           <div className='row-start-1 row-span-4'>
             <p className='mx-30px align-middle text-center'>FinTracker is your all-in-one expense and income tracking web app designed to streamline your financial management. With FinTracker, you can effortlessly track your transactions, gain insights into your spending habits, and take control of your finances like never before. Our user-friendly interface allows you to input and categorize your transactions with ease, ensuring that you have a clear overview of your financial activities.</p>
           </div>
-          <div className=''>
-            <Button text='Get started' link='/Dashboard'/>
-          </div>
+
+          <button
+        className={`flex justify-center align-middle items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap ${accentColor} rounded-xl text-white sm:w-[130px] sm:h-[30px] md:h-[35px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}
+        onClick={() => {
+          setShowMessage(true)
+        }}>
+        <span className='sm:text-[14px] md:text-[18px]'>Get Started</span> 
+        </button>
         </div>
 
         {/* Second column of intro section */}
