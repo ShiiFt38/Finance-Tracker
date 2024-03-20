@@ -5,6 +5,7 @@ import { useAccentColor } from '../Context/AccentColorContext';
 import Orb from '../Components/Orb';
 import transactionIcon from '../assets/transaction.png'
 import budgetIcon from '../assets/budget.png'
+import Reportsicon from '../assets/Reports.png'
 
 const Settings = () => {
     const navigate = useNavigate();
@@ -24,7 +25,8 @@ const Settings = () => {
         {name: 'Red', color: 'bg-red-500'},
         {name: 'Purple', color: 'bg-purple-600'},
         {name: 'Black', color: 'bg-black'},
-        {name: 'Yellow', color: 'bg-yellow-400'}]
+        {name: 'Yellow', color: 'bg-yellow-400'},
+        {name: 'Green', color: 'bg-green-500'}]
 
 const optionStyles ='flex py-[8px] flex space-between w-[90%] mx-auto bg-gray-300 rounded-[5px] px-[5px]';
 
@@ -76,7 +78,7 @@ const optionStyles ='flex py-[8px] flex space-between w-[90%] mx-auto bg-gray-30
                         <div className='rounded-[50%] w-[33px] h-[33px] mx-[20px]'><img src={transactionIcon} alt="transaction" /></div>
                         <p>Transactions</p>
                         <div className='ml-auto mx-[35px] h-6 w-6 cursor-pointer rounded-xl'>
-                            <input type='radio' checked className={`bg-black md:w-6 md:h-6 h-5 w-5 rounded-full my-auto shadow-md`}>
+                            <input type='checkbox' className={`bg-black md:w-6 md:h-6 h-5 w-5 rounded-full my-auto shadow-md`}>
                             </input>
                         </div>
                 </div>
@@ -85,12 +87,30 @@ const optionStyles ='flex py-[8px] flex space-between w-[90%] mx-auto bg-gray-30
                         <div className='rounded-[50%] w-[33px] h-[33px] mx-[20px]'><img src={budgetIcon} alt="budget" /></div>
                         <p>Budgets</p>
                         <div className='ml-auto mx-[35px] h-6 w-6 cursor-pointer rounded-xl'>
-                            <input type='radio' className={`bg-black md:w-6 md:h-6 h-5 w-5 rounded-full my-auto shadow-md`}>
+                            <input type='checkbox' className={`bg-black md:w-6 md:h-6 h-5 w-5 rounded-full my-auto shadow-md`}>
+                            </input>
+                        </div>
+                </div>
+
+                <div className={optionStyles}>
+                        <div className='rounded-[50%] w-[33px] h-[33px] mx-[20px]'><img src={Reportsicon} alt="budget" /></div>
+                        <p>Custom Reports</p>
+                        <div className='ml-auto mx-[35px] h-6 w-6 cursor-pointer rounded-xl'>
+                            <input type='checkbox' className={`bg-black md:w-6 md:h-6 h-5 w-5 rounded-full my-auto shadow-md`}>
                             </input>
                         </div>
                 </div>
 
                 </div>
+            </div>
+
+            <div className='flex flex-col sm:w-[90%] mb-[50px] md:w-[75%] mx-auto'>
+                <div className='bg-gray-600 flex sm:px-[10px] md:px-[50px] py-[8px] rounded-[5px] mt-[35px]'>
+                    <p className='font-bold text-[14px] text-white'>Notifications</p>
+                    <input type='checkbox' className={`bg-black ml-auto md:w-6 md:h-6 h-5 w-5 rounded-full my-auto shadow-md`}>
+                            </input>
+                </div>
+                
             </div>
 
         </main>

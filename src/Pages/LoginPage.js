@@ -34,6 +34,7 @@ function LoginPage() {
             type="email" 
             required
             name='email'
+            autocomplete='off'
             onChange={handleChange}
             placeholder='Email' 
             className='justify-center border invalid:border-pink-500 invalid:text-pink-600 items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full'/>
@@ -44,6 +45,7 @@ function LoginPage() {
             type="password" 
             required
             name='password'
+            minLength='8'
             onChange={handleChange}
             placeholder='Password' 
             className='justify-center border invalid:border-pink-500 invalid:text-pink-600 items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full' />

@@ -11,6 +11,7 @@ import Wallet from '../assets/wallet-solid.svg'
 import AddTransactionForm from '../Components/AddTransactionForm'
 import Trash from '../assets/trash-solid.svg'
 import Edit from '../assets/pen-to-square-solid.svg'
+import TransactionEditForm from '../Components/TransactionEditForm'
 
 const Transactions = () => {
     const {accentColor} = useAccentColor();
@@ -18,6 +19,7 @@ const Transactions = () => {
     const [ transactionType, setTransactionType ] = useState('all');
     const [ category, setCategory ] = useState('all');
     const [ showForm, setShowForm ] = useState(false);
+    const [ showEdit, setShowEdit ] = useState(false);
     const [ transactionsList, setTransactionsList ] = useState([
         {id:1, category: 'expense', name: 'Groceries', date: 'Jan 29', amount: -100, icon: groceriesIcon},
         {id:2, category: 'expense', name: 'Restaurant', date: 'Jan 28', amount: -50, icon: restaurantIcon},
@@ -38,7 +40,7 @@ const Transactions = () => {
         const index = transactionsList.findIndex(item => item.id === id);
         const editedTransaction = transactionsList[index];
       
-        setShowForm(true);
+        setShowEdit(true);
         return editedTransaction;
       
         }
@@ -52,6 +54,7 @@ const Transactions = () => {
 
     <main className='p-4 sm:ml-[80px]'>
         {showForm ? <AddTransactionForm onClose={() => setShowForm(false)} /> : null}
+        {showEdit && <TransactionEditForm onClose={() => setShowEdit(false)}/>}
         <h1 className='md:text-[22px] sm:text-[18px] font-bold'>Transactions</h1>
 
         <section className='w-full flex flex-row md:place-content-end gap-[20px] sm:place-content-center '>

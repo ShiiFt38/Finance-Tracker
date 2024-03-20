@@ -183,7 +183,6 @@ const Reports = () => {
                  className={filterStyles}
                  value={multiChartType}
                  onChange={handleMultiChartType}>
-                  <option value="bar">Pie</option>
                  <option value="line">Line/Bar</option>
                </select>
             </div>

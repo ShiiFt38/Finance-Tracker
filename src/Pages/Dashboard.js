@@ -13,14 +13,26 @@ const Dashboard = () => {
 
     <main className='p-4 sm:ml-[80px]'>
         <h1 className='md:text-[22px] sm:text-[18px] font-bold'>Welcome Back, {user}</h1>
-        <section className='grid md:grid-cols-4 my-[30px] grid-cols-2 space-between sm:gap-2 md:gap-2 py-3 mt-[30px]'>
-          <div className='border-2 rounded-xl border-gray-500 sm:h-10 md:w-48 md:h-20'></div>
-          <div className='border-2 rounded-xl border-gray-500 sm:h-10 md:w-48 md:h-20'></div>
-          <div className='border-2 rounded-xl border-gray-500 sm:h-10 md:w-48 md:h-20'></div>
-          <div className='border-2 rounded-xl border-gray-500 sm:h-10 md:w-48 md:h-20'></div>
+        <section className='grid lg:grid-cols-4 place-items-center w-full my-[30px] md:grid-cols-2 space-between sm:gap-2 md:gap-2 py-3 mt-[30px]'>
+          <div className='border-2 text-center rounded-xl w-[150px] border-gray-500 md:w-48 h-20'>
+            <p className='font-bold text-[28px]'>$0</p>
+            <p className='text-gray-500'>Spendable</p>
+          </div>
+          <div className='border-2 text-center rounded-xl w-[150px] border-gray-500 md:w-48 h-20'>
+            <p className='font-bold text-[28px]'>$0</p>
+            <p className='text-gray-500'>Saved</p>
+          </div>
+          <div className='border-2 text-center rounded-xl w-[150px] border-gray-500 md:w-48 h-20'>
+            <p className='font-bold text-[28px]'>$0</p>
+            <p className='text-gray-500'>Credit Limit</p>
+          </div>
+          <div className='border-2 text-center rounded-xl w-[150px] border-gray-500 md:w-48 h-20'>
+            <p className='font-bold text-[28px]'>$0</p>
+            <p className='text-gray-500'>Invested</p>
+          </div>
         </section>
 
-        <section>
+        <section className='flex h-[500px] w-full justify-center' >
           <MultiLineChart/>
         </section>
 
