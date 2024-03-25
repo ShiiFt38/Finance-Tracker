@@ -16,7 +16,7 @@ const EditBudgetForm = ({budget, onSave, onClose}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSave(editedBudget);
+        // onSave(editedBudget);
     }
 
   return (

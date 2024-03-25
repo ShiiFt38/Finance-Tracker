@@ -4,7 +4,7 @@ import { useAccentColor } from '../Context/AccentColorContext'
 const AddTransactionForm = ({onClose}) => {
   const { accentColor } = useAccentColor();
 
-  const [transactionType, setTransactionType] = useState('expense')
+  const [transactionType, setTransactionType] = useState('expense');
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
@@ -66,7 +66,7 @@ const AddTransactionForm = ({onClose}) => {
             <button onClick={onClose} className={`${accentColor} text-white px-4 py-2 rounded-md hover:${accentColor} focus:outline-none focus:${accentColor}`}>Cancel</button>
           </div>
           <div className="text-right">
-            <button type="submit" onSubmit={(e) => e.preventDefault()} className={`${accentColor} text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600`}>Add</button>
+            <button type="submit" onSubmit={(e) => {e.preventDefault()}} className={`${accentColor} text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600`}>Add</button>
           </div>
         </div>
 

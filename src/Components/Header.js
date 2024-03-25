@@ -4,7 +4,7 @@ import Button from './Button';
 
 function Header({hidden}) {
   return (
-    <header className="relative flex flex-wrap bg-white sm:flex-col md:flex-row place-items-center justify-between mx-auto sm:w-[100%] md:w-[80%] md:rounded-[10px] min-h-[65px] top-0 left-0 border-b [border-bottom-style:solid] border-[#e5e8ea]">
+    <header className="sticky flex flex-wrap bg-white sm:flex-col md:flex-row place-items-center justify-between mx-auto sm:w-[100%] md:w-[80%] md:rounded-[10px] min-h-[65px] top-0 left-0 border-b [border-bottom-style:solid] border-[#e5e8ea]">
 
       <div className="flex w-[95.34px] h-[65px] place-items-center">
         <div className="w-[20px] h-[16px] m-auto">

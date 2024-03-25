@@ -33,7 +33,7 @@ const optionStyles ='flex py-[8px] flex space-between w-[90%] mx-auto bg-gray-30
 
   return (
     <>
-        <header className="flex bg-white flex-row mx-auto gap-[50px] sm:pl-[30px] md:pl-[80px] min-h-[65px] border-b [border-bottom-style:solid] border-[#e5e8ea]">
+        <header className="fixed w-[100%] flex bg-white flex-row mx-auto gap-[50px] sm:pl-[30px] md:pl-[80px] min-h-[65px] border-b [border-bottom-style:solid] border-[#e5e8ea]">
             <div className='mr-auto'>
                 <img src={LeftArrow} onClick={handleClick} alt="back button" className='w-[26px] h-[24px] mt-[20px] mx-auto cursor-pointer' />
             </div>
@@ -47,7 +47,7 @@ const optionStyles ='flex py-[8px] flex space-between w-[90%] mx-auto bg-gray-30
             <Orb/>
 
             {/* Accent color option */}
-            <div className='flex flex-col sm:w-[90%] md:w-[75%] mx-auto'>
+            <div className='flex flex-col mt-[40px] sm:w-[90%] md:w-[75%] mx-auto'>
                 <div className='bg-gray-600 flex sm:px-[10px] md:px-[50px] py-[8px] rounded-[5px] mt-[35px]'>
                     <p className='font-bold text-[14px] text-white'>Accent Color</p>
                 </div>

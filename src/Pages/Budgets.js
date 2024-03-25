@@ -67,7 +67,7 @@ const handleEdit = (id) => {
                     <div className='cols-start-1 align-middle cols-span-1'>
                       <img src={budget.icon} alt={budget.alt} className='m-auto bg-gray-200 rounded-md p-2 ' />
                     </div>
-                    <div className='grid grid-rows-2 cols-start-2 col-span-3'>
+                    <div className='grid grid-rows-2 ml-[20px] cols-start-2 col-span-3'>
                       <div className='row-start-1 row-span-1 font-bold'><p>{budget.budgetName}</p></div>
                       <div><span className='font-light text-start mx-auto text-[10px]'>{`$${budget.spent} of $${budget.total}`}</span></div>
                     </div>

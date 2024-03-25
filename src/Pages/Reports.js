@@ -8,12 +8,15 @@ import MultiChart from '../Components/Charts/MultiChart';
 import PieChart from '../Components/Charts/PieChart';
 import BarChart from '../Components/Charts/BarChart';
 import { useAccentColor } from '../Context/AccentColorContext';
+import CustomReportForm from '../Components/CustomReportForm';
 
 
 const Reports = () => {
     ChartJS.register(ArcElement,CategoryScale,LinearScale,Tooltip, Legend);
 
     const {accentColor} = useAccentColor();
+
+    const [showForm, setShowForm] = useState(false);
 
     const [year, setYear] = useState(2023);
     const [chartType, setChartType] = useState('pie');
@@ -53,6 +56,7 @@ const Reports = () => {
     <>
     <Header hidden="hidden"/>
     <Dashside/>
+    {showForm ? <CustomReportForm onClose={() => setShowForm(false)} /> : null}
 
     <main className='p-4 sm:ml-[80px]'>
         <section className='snap-mandatory grid-cols-12 grid-rows-12'>
@@ -198,7 +202,7 @@ const Reports = () => {
 
           <div className='row-start-3 row-span-2'>
             <article className='flex place-content-center align-middle rounded-xl mt-[20px] mb-10 bg-white h-[70px]'>
-              <button className='bg-gray-300 m-auto rounded-md hover:bg-gray-700 w-[45px] h-[45px]'>
+              <button onClick={() => {setShowForm(true)}} className='bg-gray-300 m-auto rounded-md hover:bg-gray-700 w-[45px] h-[45px]'>
                 <img src={Plus} alt='Add budget' className='m-auto w-[16px]'/>
               </button>
             </article>

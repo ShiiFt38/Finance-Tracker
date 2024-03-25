@@ -97,10 +97,10 @@ const Transactions = () => {
             return (
                 <article key={transaction.id} className={`flex mt:5 sm:mt-[10px] md:mt-[20px] ${category === 'all' || transaction.name === category ? null : 'hidden'} bg-white flex-wrap md:flex-row ${transaction.category === 'expense' && transactionType === 'income' ? 'hidden' : null} ${transaction.category === 'income' && transactionType === 'expense' ? 'hidden' : null} justify-between gap-[10px] min-h-[70px] justify-between py-2 rounded-xl px-5`} >
                     <div className='grid grid-cols-4 w-[200px]'>
-                        <div className='cols-start-1 flex place-content-center cols-span-1'>
+                        <div className='cols-start-1 flex bg-gray-200 fit-content p-2 rounded-md place-content-center cols-span-1'>
                             <img className='w-[24px] h-[24px] m-auto' src={transaction.icon} alt={transaction.name} />
                         </div>
-                        <div className='grid grid-rows-2 cols-start-2 col-span-3'>
+                        <div className='grid grid-rows-2 ml-[20px] cols-start-2 col-span-3'>
                             <div className='row-start-1 row-span-1 font-bold'>
                                 <p>{transaction.name}</p>
                             </div>
