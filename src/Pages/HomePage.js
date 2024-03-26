@@ -96,10 +96,10 @@ function HomePage() {
       </section>
 
       {/* Why Us section */}
-      <section className='grid grid-cols-12 w-[100%] mt-8 min-h-[400px]'>
+      <section className='grid grid-cols-12 w-[100%] mt-8 min-h-[400px]' id='Why-Us'>
 
         {/* First colulmn of why us section */}
-      <div className='grid grid-rows-6 sm:col-start-2 md:col-start-3 sm:col-span-10 md:col-span-4' id='Why-Us'>
+      <div className='grid grid-rows-6 sm:col-start-2 md:col-start-3 sm:col-span-10 md:col-span-4'>
           <h1 className='font-bold text-[28px] mx-auto row-start-1 '>Why Us</h1>
           <p className='text-center row-start-2 row-span-5'>
             Our platform stands out for its intuitive user interface, making it effortless for anyone to get started with tracking expenses and income. With FinTracker, you don't need to be a financial expert to take control of your money. Our simple UI guides you through the process, allowing you to input and categorize transactions with ease. Say goodbye to complex spreadsheets and tedious manual tracking. Join FinTracker today and simplify your financial management journey.</p>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../Components/Header'
 import Orb from '../Components/Orb'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const SignUpPage = () => {
@@ -9,11 +9,15 @@ const SignUpPage = () => {
     const [registrationDetails, setRegistrationDetails] = useState({
         username: '',
         userEmail: '',
-        userPassword: '',
-        confirmPassword: '',
+        userPassword: ''
     });
 
+    const [ message, setMessage ] = useState(' ');
+
+    const navigate = useNavigate();
+
     // const [ errors, setErrors ] = useState({})
+
 
     const handleChange = (e) => {
         setRegistrationDetails(prevState => ({
@@ -23,15 +27,32 @@ const SignUpPage = () => {
         console.log(registrationDetails)
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        if(registrationDetails.userPassword !== registrationDetails.confirmPassword){
-            setPasswordMatch(false);
-            return;
-        }
-    }
 
-    const [passwordMatch, setPasswordMatch] = useState(true);
+        try {
+            const response = await fetch("/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(registrationDetails)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setMessage(data.message);
+                navigate('/Login');
+
+            } else {
+                throw new Error(data.message);
+            }
+        } catch (error){
+            console.error("Error: ", error);
+            setMessage("Error: " + error.message);
+        }
+    };
 
     const inputStyles = 'justify-center border invalid:border-pink-500 invalid:text-pink-600 items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full'
 
@@ -80,7 +101,7 @@ const SignUpPage = () => {
                 name='confirmPassword'
                 onChange={handleChange}
                 className={inputStyles}/>
-            {!passwordMatch && <p className='text-red-500'>Passwords do not match</p>}
+            {message && <div className='mt-[20px]'><p className='text-red-400'>{message}</p></div>}
 
             <button className={`flex justify-center align-middle m-auto items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap bg-blue-500 rounded-xl text-white sm:w-[230px] sm:h-[30px] md:h-[35px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`} type='submit'>Create Account</button>
         
