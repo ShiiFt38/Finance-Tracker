@@ -3,26 +3,14 @@ import Header from '../Components/Header';
 import { Link, useNavigate } from 'react-router-dom';
 // import GoogleIcon from '../assets/google.svg'
 import Orb from '../Components/Orb';
+import { useFormik } from 'formik';
+import * as Yup from 'yup'
 
 
 function LoginPage() {
-
-  const [ loginDetails, setLoginDetails ] = useState({
-    email: "",
-    password: ""
-  });
-
   const [ message, setMessage ] = useState(' ');
 
   const navigate = useNavigate();
-
-  const handleChange = (event) => {
-    setLoginDetails(prevState => ({
-      ...prevState,
-      [event.target.name]: event.target.value
-    }))
-    console.log(loginDetails)
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +21,7 @@ function LoginPage() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(loginDetails)
+        body: JSON.stringify(formik.values)
       });
 
       const data = await response.json();
@@ -50,6 +38,29 @@ function LoginPage() {
     }
   };
 
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: ""
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email("Invalid email address")
+    })
+  })
+
+ /* const [ loginDetails, setLoginDetails ] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (event) => {
+    setLoginDetails(prevState => ({
+      ...prevState,
+      [event.target.name]: event.target.value
+    }))
+    console.log(loginDetails)
+  }*/
+
   return (
     <>
     <Header />
@@ -65,9 +76,11 @@ function LoginPage() {
             required
             name='email'
             autocomplete='off'
-            onChange={handleChange}
+            value={formik.values.email}
+            onChange={formik.handleChange}
             placeholder='Email' 
-            className='justify-center border invalid:border-pink-500 invalid:text-pink-600 items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full'/>
+            className='justify-center border items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full'/>
+          <div className='mt-[20px]'><p className='text-red-400'>{formik.errors.email}</p></div>
 
 
           <input 
@@ -76,10 +89,12 @@ function LoginPage() {
             required
             name='password'
             minLength='8'
-            onChange={handleChange}
+            values={formik.values.password}
+            onChange={formik.handleChange}
             placeholder='Password' 
-            className='justify-center border invalid:border-pink-500 invalid:text-pink-600 items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full' />
-            {message && <div>{message}</div>}
+            className='justify-center border items-start py-4 pr-16 pl-4 mt-11 bg-gray-100 rounded-xl max-md:pr-5 max-md:mt-10 max-md:max-w-full' />
+            <div className='mt-[20px]'><p className='text-red-400'>{formik.errors.password}</p></div>
+            <div className='mt-[20px]'><p className='text-red-400'>{message}</p></div>
 
             <button className={`flex justify-center align-middle m-auto items-center px-8 py-2.5 mt-3.5 font-bold whitespace-nowrap bg-blue-500 rounded-xl text-white sm:w-[230px] sm:h-[30px] md:h-[35px] hover:bg-[#637587] transition-all duration-1000ms ease-in max-md:px-5 cursor-pointer`}>Sign in</button>
       </form>
