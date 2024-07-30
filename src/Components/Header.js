@@ -22,9 +22,8 @@ function Header() {
       </div>
 
       {isAuthenticated === false ?
-        <div className='flex flex-row content-center bg-blue-100 mb-[20px] rounded-2xl '>
+        <div className='flex flex-row content-center px-[20px] py-[10px] bg-blue-100 my-auto rounded-2xl '>
           <LoginButton />
-          <Button text="Sign Up" link="/SignUp" />
         </div> : <Button text="Dashboard" link="/Dashboard"/>}
 
     </header>

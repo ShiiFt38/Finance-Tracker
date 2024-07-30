@@ -43,7 +43,7 @@ const Dashside = () => {
                         )
                     })}
                     <div>
-                        <LogOut open={open}/>
+                        <LogOut open={open} setOpen={setOpen}/>
 
                         <Link to='/Settings' className={`flex px-2 w-[180px] sticky space-x-3 ${!open ? 'hover:none' : 'sm:hover:none md:hover:bg-gray-300'} p-2 rounded-xl`}>
                             <img className={`${!open ? 'sm:hover:bg-gray-200' : 'hover:none'} rounded-md`} src={Settingsicon} alt='settings' />
