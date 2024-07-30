@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import Button from './Button';
+import LoginButton from './LoginButton';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
-function Header({hidden}) {
+function Header() {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <header className="sticky flex flex-wrap bg-white sm:flex-col md:flex-row place-items-center justify-between mx-auto sm:w-[100%] md:w-[80%] md:rounded-[10px] min-h-[65px] top-0 left-0 border-b [border-bottom-style:solid] border-[#e5e8ea]">
 
@@ -17,14 +21,13 @@ function Header({hidden}) {
         </div>
       </div>
 
-      <div className={`${hidden} align-middle h-[65px] flex sm:flex-col text-center sm:pb-20 md:pb-0 sm:pt-30 md:flex-row`}>
-        <Link to='/Login' className=" w-[89px] font-bold text-[#197fe5] m-auto text-[14px] align-middle">
-          Log in
-        </Link>
-        <Button text="Sign Up" link="/SignUp"/>
-      </div>
+      {isAuthenticated === false ?
+        <div className='flex flex-row content-center bg-blue-100 mb-[20px] rounded-2xl '>
+          <LoginButton />
+          <Button text="Sign Up" link="/SignUp" />
+        </div> : <Button text="Dashboard" link="/Dashboard"/>}
 
-  </header>
+    </header>
   );
 };
 
